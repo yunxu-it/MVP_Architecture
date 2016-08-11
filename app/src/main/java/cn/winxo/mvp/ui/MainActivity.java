@@ -12,27 +12,21 @@ import cn.winxo.mvp.presenter.ExamplePresenter;
 
 public class MainActivity extends AppCompatActivity implements ExampleContract.View {
 
-    private ExamplePresenter presenter;
+    private ExamplePresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        presenter = new ExamplePresenter(this, this);
+        mPresenter = new ExamplePresenter(this, this);
 
     }
 
 
     private void refresh() {
-        presenter.getExample();
+        mPresenter.getExample();
     }
 
-
-
-    @Override
-    public void setPresenter(ExampleContract.Presenter presenter) {
-
-    }
 
     @Override
     public void showExample(List<Example> exampleList) {

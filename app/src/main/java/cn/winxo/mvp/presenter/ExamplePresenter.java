@@ -24,7 +24,6 @@ public class ExamplePresenter implements ExampleContract.Presenter, IExampleData
 
         this.context = context;
         this.view = view;
-        view.setPresenter(this);
         iExample = new ExampleRemoteDataImpl();
     }
 
@@ -41,11 +40,6 @@ public class ExamplePresenter implements ExampleContract.Presenter, IExampleData
     @Override
     public void getExample() {
         iExample.loadExampleList(context, this);
-    }
-
-    @Override
-    public void start() {
-
     }
 
 
