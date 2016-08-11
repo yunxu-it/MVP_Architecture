@@ -12,7 +12,7 @@ import cn.winxo.mvp.model.entity.Example;
  */
 public interface ExampleContract {
 
-    interface View extends BaseView<Presenter> {
+    interface View extends BaseView {
         void showExample(List<Example> exampleList);
 
         void showError(String s);

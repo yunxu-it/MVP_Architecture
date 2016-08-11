@@ -6,12 +6,13 @@ import java.util.ArrayList;
 
 import cn.winxo.mvp.model.IExampleData;
 import cn.winxo.mvp.model.entity.Example;
+import cn.winxo.mvp.mvp.MvpModel;
 
 /**
  * @author dell
  * @date 2016/8/10 16:32
  */
-public class ExampleRemoteDataImpl implements IExampleData {
+public class ExampleRemoteDataImpl extends MvpModel implements IExampleData {
 
 
     @Override
