@@ -8,9 +8,9 @@ import cn.winxo.library.utils.ToastUtils;
  * User: winxo
  * Date: 2016/8/25
  */
-public class App extends Application {
+public class LibApp extends Application {
 
-    private static App mInstance;
+    private static LibApp mInstance;
 
     @Override
     public void onCreate() {
@@ -19,7 +19,7 @@ public class App extends Application {
         ToastUtils.init(this);
     }
 
-    public static App getmInstance() {
+    public static LibApp getmInstance() {
         return mInstance;
     }
 }
