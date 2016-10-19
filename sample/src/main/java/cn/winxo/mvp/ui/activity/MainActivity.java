@@ -17,10 +17,11 @@ import cn.winxo.mvp.ui.fragment.IndexFragment;
 public class MainActivity extends BaseMainActivity {
 
 
+    protected Toolbar mToolbar;
+    protected AppBarLayout mAppbar;
     private FragmentManager mFragmentManager;
     private Fragment mCurrentFragment;
-    private Toolbar mToolbar;
-    private AppBarLayout mAppbar;
+
 
     @Override
     protected void init(Bundle savedInstanceState) {
@@ -57,4 +58,11 @@ public class MainActivity extends BaseMainActivity {
         super.setUpData();
         mToolbar.setTitle("mvp架构");
     }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
 }

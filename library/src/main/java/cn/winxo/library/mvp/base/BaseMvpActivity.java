@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import butterknife.ButterKnife;
 import cn.winxo.library.mvp.IPresenter;
 import cn.winxo.library.mvp.IView;
 import cn.winxo.library.rx.RxBus;
@@ -35,7 +34,6 @@ public abstract class BaseMvpActivity<P extends IPresenter> extends AppCompatAct
 
         init(savedInstanceState);
         setContentView(setLayoutResourceID());
-        ButterKnife.bind(this);
         setUpView();
         mPresenter = onLoadPresenter();
         getPresenter().attachView(this);

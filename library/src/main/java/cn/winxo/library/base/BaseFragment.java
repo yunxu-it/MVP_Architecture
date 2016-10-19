@@ -9,8 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import cn.winxo.library.rx.RxBus;
 import rx.Subscription;
 import rx.functions.Action1;
@@ -27,7 +25,6 @@ public abstract class BaseFragment extends Fragment {
     private Context mContext;
     private ProgressDialog mProgressDialog;
     private Subscription mSubscription;
-    private Unbinder mUnbinder;
 
 
     @Nullable
@@ -35,7 +32,6 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (mContentView == null) {
             mContentView = inflater.inflate(setLayoutResourceID(), container, false);
-            mUnbinder = ButterKnife.bind(this, mContentView);
         }
         initPresenter();
         mContext = getContext();
@@ -96,7 +92,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        mUnbinder.unbind();
     }
 
     @Override
