@@ -6,8 +6,8 @@ package cn.winxo.mvp.constant;
  */
 public class Constants {
 
+    public static final Boolean DEBUG = true;
     public static final String CODE_SUCCESS = "200";
-
 
 
 }
