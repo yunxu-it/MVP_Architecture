@@ -9,9 +9,9 @@ import android.support.v7.widget.Toolbar;
 
 import java.util.List;
 
-import cn.winxo.mvp.mvp.base.BaseMainActivity;
-import cn.winxo.library.utils.ViewUtils;
 import cn.winxo.mvp.R;
+import cn.winxo.mvp.mvp.base.BaseMainActivity;
+import cn.winxo.mvp.utils.ViewUtils;
 
 public class MainActivity extends BaseMainActivity {
 

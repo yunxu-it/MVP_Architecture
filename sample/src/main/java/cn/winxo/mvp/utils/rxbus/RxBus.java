@@ -1,17 +1,19 @@
-package cn.winxo.mvp.utils;
+package cn.winxo.mvp.utils.rxbus;
 
 
-import io.reactivex.Observable;
-import io.reactivex.subjects.PublishSubject;
+import rx.Observable;
+import rx.subjects.PublishSubject;
+import rx.subjects.SerializedSubject;
+import rx.subjects.Subject;
 
 public class RxBus {
     private static volatile RxBus defaultInstance;
 
-    private final PublishSubject<Object> bus;
+    private final Subject<Object, Object> bus;
 
     // PublishSubject只会把在订阅发生的时间点之后来自原始Observable的数据发射给观察者
-    public RxBus() {
-        bus = PublishSubject.create();
+    private RxBus() {
+        bus = new SerializedSubject<>(PublishSubject.create());
     }
 
     // 单例RxBus
@@ -35,5 +37,4 @@ public class RxBus {
     public <T> Observable<T> toObservable(Class<T> eventType) {
         return bus.ofType(eventType);
     }
-
 }

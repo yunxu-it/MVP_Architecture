@@ -1,18 +1,22 @@
 package cn.winxo.mvp.module.main;
 
+import java.util.List;
+
+import cn.winxo.mvp.api.entity.ResultsModel;
+import cn.winxo.mvp.module.example.GankContact;
 import cn.winxo.mvp.mvp.base.BaseMvpFragment;
 import cn.winxo.mvp.R;
-import cn.winxo.mvp.module.example.ExamplePresenter;
+import cn.winxo.mvp.module.example.GankPresenter;
 
 /**
  * User: winxo
  * Date: 2016/10/19
  */
-public class IndexFragment extends BaseMvpFragment<ExamplePresenter> {
+public class IndexFragment extends BaseMvpFragment<GankContact.Presenter> implements GankContact.View {
 
     @Override
-    protected ExamplePresenter onLoadPresenter() {
-        return new ExamplePresenter(this.getActivity());
+    protected GankPresenter onLoadPresenter() {
+        return new GankPresenter(this.getActivity());
     }
 
     @Override
@@ -42,6 +46,11 @@ public class IndexFragment extends BaseMvpFragment<ExamplePresenter> {
 
     @Override
     public void showError(String s) {
+
+    }
+
+    @Override
+    public void showExample(List<ResultsModel> models) {
 
     }
 }

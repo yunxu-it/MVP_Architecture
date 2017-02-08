@@ -6,7 +6,7 @@ import android.app.Application;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 
-import cn.winxo.mvp.constant.Constants;
+import cn.winxo.mvp.constant.AppConfig;
 import cn.winxo.mvp.utils.ToastUtils;
 
 /**
@@ -27,7 +27,7 @@ public class App extends Application {
 
         Logger.init("MetaPos")
                 .methodCount(3)
-                .logLevel(Constants.DEBUG ? LogLevel.FULL : LogLevel.NONE);
+                .logLevel(AppConfig.DEBUG ? LogLevel.FULL : LogLevel.NONE);
 
     }
 

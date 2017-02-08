@@ -1,8 +1,8 @@
 package cn.winxo.mvp.mvp.base;
 
 
-import com.litocloud.metapos.mvp.interfaces.IPresenter;
-import com.litocloud.metapos.mvp.interfaces.IView;
+import cn.winxo.mvp.mvp.interfaces.IPresenter;
+import cn.winxo.mvp.mvp.interfaces.IView;
 
 /**
  * Global: winxo

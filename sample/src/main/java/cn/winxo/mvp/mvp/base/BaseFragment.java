@@ -6,18 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.orhanobut.logger.Logger;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import cn.winxo.mvp.utils.RxBus;
+import cn.winxo.mvp.constant.AppConfig;
+import cn.winxo.mvp.utils.rxbus.RxBus;
+import rx.Subscriber;
+import rx.Subscription;
 
 
 /**
@@ -38,6 +39,9 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if (AppConfig.DEBUG) {
+            Log.e(TAG, "onCreate View Fragment:" + getClass().getName());
+        }
         if (mContentView == null) {
             mContentView = inflater.inflate(setLayoutResourceID(), container, false);
         }
@@ -49,29 +53,21 @@ public abstract class BaseFragment extends Fragment {
         mProgressDialog.setCanceledOnTouchOutside(false);
 
         mSubscription = RxBus.getDefault().toObservable(Object.class).subscribe(new Subscriber<Object>() {
+            @Override
+            public void onCompleted() {
+
+            }
 
             @Override
-            public void onSubscribe(Subscription s) {
-
+            public void onError(Throwable e) {
+                Logger.wtf(e.getMessage());
             }
 
             @Override
             public void onNext(Object o) {
-
-            }
-
-            @Override
-            public void onError(Throwable t) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
+                handleRxMsg(o);
             }
         });
-
-
 
         init(savedInstanceState);
         setUpView();
@@ -123,6 +119,9 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        if (AppConfig.DEBUG) {
+            Log.e(TAG, "onDestroy View Fragment:" + getClass().getName());
+        }
         if (mUnbinder != null) {//解绑ButterKnife
             mUnbinder.unbind();
         }

@@ -7,12 +7,16 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.litocloud.metapos.constant.AppConfig;
-import com.litocloud.metapos.utils.rx.RxBus;
 import com.orhanobut.logger.Logger;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import cn.winxo.mvp.constant.AppConfig;
+import cn.winxo.mvp.utils.rxbus.RxBus;
+import rx.Subscriber;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 
 /**
@@ -29,22 +33,26 @@ public abstract class BaseActivity extends FragmentActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init(savedInstanceState);
-        mSubscription = RxBus.getDefault().toObservable(Object.class).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Subscriber<Object>() {
-            @Override
-            public void onCompleted() {
+        mSubscription = RxBus.getDefault()
+                .toObservable(Object.class)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Object>() {
+                    @Override
+                    public void onCompleted() {
 
-            }
+                    }
 
-            @Override
-            public void onError(Throwable e) {
-                Logger.wtf(e.getMessage());
-            }
+                    @Override
+                    public void onError(Throwable e) {
+                        Logger.wtf(e.getMessage());
+                    }
 
-            @Override
-            public void onNext(Object o) {
-                handleRxMsg(o);
-            }
-        });
+                    @Override
+                    public void onNext(Object o) {
+                        handleRxMsg(o);
+                    }
+                });
         setContentView(setLayoutResourceID());
         initLate(savedInstanceState);
         mContext = this;
