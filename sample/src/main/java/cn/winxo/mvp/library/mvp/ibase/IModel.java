@@ -1,4 +1,4 @@
-package cn.winxo.mvp.mvp.interfaces;
+package cn.winxo.mvp.library.mvp.ibase;
 
 /**
  * Created by yunxu

@@ -1,16 +1,14 @@
 package cn.winxo.mvp.module.example;
 
 import android.content.Context;
-
+import cn.winxo.mvp.api.entity.ResultsModel;
+import cn.winxo.mvp.library.mvp.ibase.IModel;
+import cn.winxo.mvp.library.mvp.ibase.IPresenter;
+import cn.winxo.mvp.library.mvp.ibase.IView;
+import cn.winxo.mvp.model.entity.Example;
+import io.reactivex.Observable;
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.winxo.mvp.api.entity.ResultsModel;
-import cn.winxo.mvp.mvp.interfaces.IModel;
-import cn.winxo.mvp.mvp.interfaces.IPresenter;
-import cn.winxo.mvp.mvp.interfaces.IView;
-import cn.winxo.mvp.model.entity.Example;
-import rx.Observable;
 
 /**
  * @author dell
@@ -18,20 +16,20 @@ import rx.Observable;
  */
 public interface GankContact {
 
-    interface View extends IView {
-        void showExample(List<ResultsModel> exampleList);
-    }
+  interface View extends IView {
+    void showExample(List<ResultsModel> exampleList);
+  }
 
-    interface Model extends IModel {
+  interface Model extends IModel {
 
-        Observable<ArrayList<Example>> loadExampleList(Context context);
+    Observable<ArrayList<Example>> loadExampleList(Context context);
 
-        Observable<Example> loadExampleSingle(Context context);
+    Observable<Example> loadExampleSingle(Context context);
 
-        Observable<List<ResultsModel>> getGankData(int page);
-    }
+    Observable<List<ResultsModel>> getGankData(int page);
+  }
 
-    interface Presenter extends IPresenter<View> {
-        void getExample();
-    }
+  interface Presenter extends IPresenter<View> {
+    void getExample();
+  }
 }
