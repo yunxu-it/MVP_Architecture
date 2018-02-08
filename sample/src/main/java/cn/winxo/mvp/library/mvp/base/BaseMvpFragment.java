@@ -1,9 +1,9 @@
 package cn.winxo.mvp.library.mvp.base;
 
 import android.text.TextUtils;
+import cn.winxo.library.util.Toasts;
 import cn.winxo.mvp.library.mvp.ibase.IPresenter;
 import cn.winxo.mvp.library.mvp.ibase.IView;
-import cn.winxo.mvp.library.util.Toasts;
 
 /**
  * Created by yunxu

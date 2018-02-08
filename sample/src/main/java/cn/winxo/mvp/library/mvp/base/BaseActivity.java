@@ -4,8 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import cn.winxo.mvp.library.rx.RxBus;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -15,7 +13,6 @@ import io.reactivex.disposables.Disposable;
  * Date: 2016/8/25
  */
 public abstract class BaseActivity extends AppCompatActivity {
-  private Unbinder mUnbinder;
   public Context mContext;
   private Disposable mDisposable;
 
@@ -31,7 +28,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     initLate(savedInstanceState);
     mContext = this;
     initPresenter();
-    mUnbinder = ButterKnife.bind(this);//绑定ButterKnife
 
     setUpView();
     setUpData();
@@ -62,8 +58,5 @@ public abstract class BaseActivity extends AppCompatActivity {
   @Override protected void onDestroy() {
     super.onDestroy();
     RxBus.getDefault().unregister(mDisposable);
-    if (mUnbinder != null) {//解绑ButterKnife
-      mUnbinder.unbind();
-    }
   }
 }

@@ -9,8 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import cn.winxo.mvp.library.rx.RxBus;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -22,7 +20,6 @@ import io.reactivex.disposables.Disposable;
  */
 public abstract class BaseFragment extends Fragment {
   private static final String TAG = "BaseMvpFragment";
-  private Unbinder mUnbinder;
 
   private View mContentView;
   private Context mContext;
@@ -37,7 +34,6 @@ public abstract class BaseFragment extends Fragment {
       mContentView = inflater.inflate(setLayoutResourceID(), container, false);
     }
     initPresenter();
-    mUnbinder = ButterKnife.bind(this, mContentView);
 
     mContext = getContext();
 
@@ -71,13 +67,6 @@ public abstract class BaseFragment extends Fragment {
   protected abstract void setUpView();
 
   protected abstract void setUpData();
-
-  @Override public void onDestroyView() {
-    super.onDestroyView();
-    if (mUnbinder != null) {//解绑ButterKnife
-      mUnbinder.unbind();
-    }
-  }
 
   @Override public void onDestroy() {
     super.onDestroy();
