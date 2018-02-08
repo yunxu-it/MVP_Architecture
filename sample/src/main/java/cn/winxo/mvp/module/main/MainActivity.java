@@ -1,19 +1,17 @@
 package cn.winxo.mvp.module.main;
 
-import cn.winxo.mvp.api.entity.ResultsModel;
+import cn.winxo.mvp.R;
 import cn.winxo.mvp.library.mvp.base.BaseMvpActivity;
-import cn.winxo.mvp.module.example.GankContact;
-import java.util.List;
 
-public class MainActivity extends BaseMvpActivity<GankContact.Presenter>
-    implements GankContact.View {
+public class MainActivity extends BaseMvpActivity<MainContract.Presenter>
+    implements MainContract.View {
 
-  @Override protected GankContact.Presenter onLoadPresenter() {
-    return null;
+  @Override protected MainContract.Presenter onLoadPresenter() {
+    return new MainPresenter(this);
   }
 
   @Override protected int setLayoutResourceID() {
-    return 0;
+    return R.layout.activity_main;
   }
 
   @Override protected void setUpView() {
@@ -25,10 +23,6 @@ public class MainActivity extends BaseMvpActivity<GankContact.Presenter>
   }
 
   @Override public void hideLoading() {
-
-  }
-
-  @Override public void showExample(List<ResultsModel> exampleList) {
 
   }
 }
