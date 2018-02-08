@@ -1,14 +1,10 @@
 package cn.winxo.mvp.module.example;
 
 import android.content.Context;
-
-import cn.winxo.mvp.library.mvp.base.BasePresenter;
-import io.reactivex.Observer;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
-import java.util.List;
-
 import cn.winxo.mvp.api.entity.ResultsModel;
+import cn.winxo.mvp.library.mvp.base.BasePresenter;
+import io.reactivex.functions.Consumer;
+import java.util.List;
 
 /**
  * @author dell
@@ -25,20 +21,12 @@ public class GankPresenter extends BasePresenter<GankContact.View, GankContact.M
   }
 
   @Override public void getExample() {
-    mModel.getGankData(10).subscribe(new Observer<List<ResultsModel>>() {
-      @Override public void onSubscribe(@NonNull Disposable d) {
-
-      }
-
-      @Override public void onNext(@NonNull List<ResultsModel> resultsModels) {
+    mModel.getGankData(10).subscribe(new Consumer<List<ResultsModel>>() {
+      @Override public void accept(List<ResultsModel> resultsModels) throws Exception {
         mView.showExample(resultsModels);
       }
-
-      @Override public void onError(@NonNull Throwable e) {
-
-      }
-
-      @Override public void onComplete() {
+    }, new Consumer<Throwable>() {
+      @Override public void accept(Throwable throwable) throws Exception {
 
       }
     });

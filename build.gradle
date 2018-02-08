@@ -2,23 +2,22 @@
 apply from: "config.gradle"
 
 buildscript {
-    repositories {
-        jcenter()
-        mavenCentral()
-    }
-    dependencies {
-      classpath 'com.android.tools.build:gradle:2.3.3'
-      classpath 'me.tatarka:gradle-retrolambda:3.7.0'
-    }
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.0.1'
+  }
 }
 
 allprojects {
-    repositories {
-        jcenter()
-      mavenCentral()
-    }
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
 }
 
 task clean(type: Delete) {
-    delete rootProject.buildDir
+  delete rootProject.buildDir
 }
