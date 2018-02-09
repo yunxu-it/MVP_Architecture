@@ -10,6 +10,7 @@ android {
     targetSdkVersion rootProject.ext.android.targetSdkVersion
     versionCode rootProject.ext.android.versionCode
     versionName rootProject.ext.android.versionName
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
   buildTypes {
     release {
@@ -24,17 +25,24 @@ android {
   }
 }
 
+configurations.all {
+  resolutionStrategy {
+    force 'com.android.support:support-annotations:23.1.1'
+  }
+}
+
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation project(path: ':library')
 
   testImplementation 'junit:junit:4.12'
-  testImplementation "org.mockito:mockito-core:2.13.0"
-  androidTestImplementation "org.mockito:mockito-android:2.13.0"
 
-  implementation rootProject.ext.dependencies["appcompat-v7"]
-  implementation rootProject.ext.dependencies["design"]
-  implementation rootProject.ext.dependencies["recyclerview-v7"]
+
+
+  implementation "com.android.support:support-v4:${rootProject.ext.supportVersion}"
+  implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
+  implementation "com.android.support:design:${rootProject.ext.supportVersion}"
+
 
   implementation rootProject.ext.dependencies["glide"]
   implementation rootProject.ext.dependencies["gson"]
@@ -48,4 +56,9 @@ dependencies {
   implementation rootProject.ext.dependencies["retrofit"]
   implementation rootProject.ext.dependencies["retrofit-adapter-rxjava2"]
   implementation rootProject.ext.dependencies["retrofit-converter-gson"]
+
+  // test-only
+  androidTestCompile "com.android.support:support-annotations:${rootProject.ext.supportVersion}"
+  androidTestImplementation 'com.android.support.test:runner:1.0.1'
+  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }

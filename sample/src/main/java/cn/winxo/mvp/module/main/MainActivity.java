@@ -2,16 +2,17 @@ package cn.winxo.mvp.module.main;
 
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
-import android.widget.FrameLayout;
-import cn.winxo.mvp.R;
+import android.widget.Button;
 import cn.winxo.library.base.BaseMvpActivity;
+import cn.winxo.mvp.R;
 
 public class MainActivity extends BaseMvpActivity<MainContract.Presenter>
     implements MainContract.View {
 
   protected Toolbar mToolbar;
   protected AppBarLayout mAppbar;
-  protected FrameLayout mFrameContent;
+  protected Button mButton;
+  //protected FrameLayout mFrameContent;
 
   @Override protected MainContract.Presenter onLoadPresenter() {
     return new MainPresenter(this);
@@ -24,7 +25,10 @@ public class MainActivity extends BaseMvpActivity<MainContract.Presenter>
   @Override protected void initView() {
     mToolbar = (Toolbar) findViewById(R.id.toolbar);
     mAppbar = (AppBarLayout) findViewById(R.id.appbar);
-    mFrameContent = (FrameLayout) findViewById(R.id.frame_content);
+    mButton = (Button) findViewById(R.id.button);
+    //mFrameContent = (FrameLayout) findViewById(R.id.frame_content);
+
+    mToolbar.setTitle(R.string.app_name);
   }
 
   @Override public void showLoading() {
