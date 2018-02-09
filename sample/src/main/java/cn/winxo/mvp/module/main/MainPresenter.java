@@ -19,4 +19,8 @@ public class MainPresenter extends BasePresenter<MainContract.View, MainContract
     mContext = context;
     mModel = new MainModel();
   }
+
+  @Override public void changeText(int visibility) {
+    mView.changeButton(visibility + "");
+  }
 }

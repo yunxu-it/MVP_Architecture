@@ -14,6 +14,7 @@ import cn.winxo.library.base.ibase.IView;
 public interface MainContract {
   interface View extends IView {
 
+    void changeButton(String text);
   }
 
   interface Model extends IModel {
@@ -22,5 +23,6 @@ public interface MainContract {
 
   interface Presenter extends IPresenter<View> {
 
+    void changeText(int visibility);
   }
 }
