@@ -1,8 +1,11 @@
-package cn.winxo.mvp.library.mvp.base;
+package cn.winxo.library.base;
+
+import android.widget.Toast;
 
 /**
- * Global: winxo
+ * Author: Winxo
  * Date: 2016/8/25
+ * Desc:
  */
 public abstract class BaseMainActivity extends BaseActivity {
   private long lastBackKeyDownTick = 0;
@@ -12,7 +15,7 @@ public abstract class BaseMainActivity extends BaseActivity {
     beforeOnBackPressed();
     long currentTick = System.currentTimeMillis();
     if (currentTick - lastBackKeyDownTick > MAX_DOUBLE_BACK_DURATION) {
-      //            ToastUtils.getInstance().showToast("再按一次退出");
+      Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
       lastBackKeyDownTick = currentTick;
     } else {
       finish();

@@ -1,13 +1,14 @@
-package cn.winxo.mvp.library.mvp.base;
+package cn.winxo.library.base;
 
 import android.text.TextUtils;
+import cn.winxo.library.base.ibase.IPresenter;
+import cn.winxo.library.base.ibase.IView;
 import cn.winxo.library.util.Toasts;
-import cn.winxo.mvp.library.mvp.ibase.IPresenter;
-import cn.winxo.mvp.library.mvp.ibase.IView;
 
 /**
- * Global: winxo
- * Date: 2016/8/25
+ * Author: Winxo
+ * Date: 2018/2/9
+ * Desc:
  */
 public abstract class BaseMvpActivity<P extends IPresenter> extends BaseActivity implements IView {
 
@@ -39,7 +40,7 @@ public abstract class BaseMvpActivity<P extends IPresenter> extends BaseActivity
   @Override protected void onDestroy() {
     super.onDestroy();
     if (getPresenter() != null) {
-      getPresenter().onUnsubscribe();
+      getPresenter().onUnSubscribe();
     }
     if (getPresenter() != null) {
       getPresenter().detachView();

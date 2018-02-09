@@ -1,11 +1,10 @@
-package cn.winxo.mvp.library.mvp.ibase;
+package cn.winxo.library.base.ibase;
 
 /**
- * Created by yunxu
- * Date: 2016/10/10.
- * Time：1:10
+ * Author: Winxo
+ * Date: 2016/10/10
+ * Desc:
  */
-
 public interface IView {
   void showLoading();
 

@@ -1,25 +1,23 @@
-package cn.winxo.mvp.library.mvp.base;
+package cn.winxo.library.base;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.BuildConfig;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import cn.winxo.mvp.library.rx.RxBus;
+import cn.winxo.library.rx.RxBus;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 
 /**
- * Created by yunxu
- * Date: 2016/8/26.
- * Time：0:13
+ * Author: Winxo
+ * Date: 2016/8/26
+ * Desc:
  */
 public abstract class BaseFragment extends Fragment {
-  private static final String TAG = "BaseMvpFragment";
 
   private View mContentView;
   private Context mContext;
@@ -27,24 +25,20 @@ public abstract class BaseFragment extends Fragment {
 
   @Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    if (BuildConfig.DEBUG) {
-      Log.e(TAG, "onCreate View Fragment:" + getClass().getName());
-    }
     if (mContentView == null) {
       mContentView = inflater.inflate(setLayoutResourceID(), container, false);
     }
     initPresenter();
 
     mContext = getContext();
-
     mDisposable = RxBus.getDefault()
         .toObservable(Object.class)
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(this::handleRxMsg,
             throwable -> Log.wtf("RxBus Error: ", throwable.getMessage()));
     init(savedInstanceState);
-    setUpView();
-    setUpData();
+    initView();
+    initData();
     return mContentView;
   }
 
@@ -64,9 +58,9 @@ public abstract class BaseFragment extends Fragment {
   protected void init(Bundle savedInstanceState) {
   }
 
-  protected abstract void setUpView();
+  protected abstract void initView();
 
-  protected abstract void setUpData();
+  protected abstract void initData();
 
   @Override public void onDestroy() {
     super.onDestroy();

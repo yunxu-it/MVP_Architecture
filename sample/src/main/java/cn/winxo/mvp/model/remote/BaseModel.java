@@ -1,4 +1,4 @@
-package cn.winxo.mvp.api.entity;
+package cn.winxo.mvp.model.remote;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.List;

@@ -1,8 +1,8 @@
 package cn.winxo.mvp.module.example;
 
 import android.content.Context;
-import cn.winxo.mvp.api.entity.ResultsModel;
-import cn.winxo.mvp.model.entity.Example;
+import cn.winxo.mvp.model.remote.ResultsModel;
+import cn.winxo.mvp.model.local.Example;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

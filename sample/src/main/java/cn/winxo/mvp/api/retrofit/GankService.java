@@ -1,7 +1,7 @@
 package cn.winxo.mvp.api.retrofit;
 
 import cn.winxo.mvp.api.Apis;
-import cn.winxo.mvp.api.entity.BaseModel;
+import cn.winxo.mvp.model.remote.BaseModel;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

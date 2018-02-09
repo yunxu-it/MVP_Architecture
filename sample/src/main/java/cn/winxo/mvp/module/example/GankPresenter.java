@@ -1,8 +1,8 @@
 package cn.winxo.mvp.module.example;
 
 import android.content.Context;
-import cn.winxo.mvp.api.entity.ResultsModel;
-import cn.winxo.mvp.library.mvp.base.BasePresenter;
+import cn.winxo.mvp.model.remote.ResultsModel;
+import cn.winxo.library.base.BasePresenter;
 import io.reactivex.functions.Consumer;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package cn.winxo.mvp.library.rx;
+package cn.winxo.library.rx;
 
 import com.jakewharton.rxrelay2.PublishRelay;
 import com.jakewharton.rxrelay2.Relay;

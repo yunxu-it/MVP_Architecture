@@ -1,4 +1,4 @@
-package cn.winxo.mvp.library.rx;
+package cn.winxo.library.rx;
 
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

@@ -1,4 +1,4 @@
-package cn.winxo.mvp.model.entity;
+package cn.winxo.mvp.model.local;
 
 /**
  * @author dell

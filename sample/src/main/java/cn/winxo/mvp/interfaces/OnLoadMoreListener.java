@@ -1,4 +1,4 @@
-package cn.winxo.mvp.library.interfaces;
+package cn.winxo.mvp.interfaces;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

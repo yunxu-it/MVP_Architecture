@@ -1,8 +1,8 @@
-package cn.winxo.mvp.library.mvp.base;
+package cn.winxo.library.base;
 
-import cn.winxo.mvp.library.mvp.ibase.IModel;
-import cn.winxo.mvp.library.mvp.ibase.IPresenter;
-import cn.winxo.mvp.library.mvp.ibase.IView;
+import cn.winxo.library.base.ibase.IModel;
+import cn.winxo.library.base.ibase.IPresenter;
+import cn.winxo.library.base.ibase.IView;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
@@ -21,8 +21,7 @@ public abstract class BasePresenter<V extends IView, M extends IModel> implement
     mView = null;
   }
 
-  //RXjava取消注册，以避免内存泄露
-  @Override public void onUnsubscribe() {
+  @Override public void onUnSubscribe() {
     if (mDisposable != null && mDisposable.isDisposed()) {
       mDisposable.clear();
       mDisposable = null;

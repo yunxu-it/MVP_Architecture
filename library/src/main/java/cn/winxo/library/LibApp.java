@@ -4,9 +4,9 @@ import android.app.Application;
 import cn.winxo.library.util.Toasts;
 
 /**
- * @author yunxu
- * @date 09/02/2018
- * @desc
+ * Author: Winxo
+ * Date: 2018/2/9
+ * Desc:
  */
 public class LibApp extends Application {
 

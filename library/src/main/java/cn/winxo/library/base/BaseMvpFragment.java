@@ -1,14 +1,14 @@
-package cn.winxo.mvp.library.mvp.base;
+package cn.winxo.library.base;
 
 import android.text.TextUtils;
+import cn.winxo.library.base.ibase.IPresenter;
+import cn.winxo.library.base.ibase.IView;
 import cn.winxo.library.util.Toasts;
-import cn.winxo.mvp.library.mvp.ibase.IPresenter;
-import cn.winxo.mvp.library.mvp.ibase.IView;
 
 /**
- * Created by yunxu
- * Date: 2016/8/26.
- * Time：0:13
+ * Author: Winxo
+ * Date: 2016/8/26
+ * Desc:
  */
 public abstract class BaseMvpFragment<P extends IPresenter> extends BaseFragment implements IView {
 
@@ -18,9 +18,6 @@ public abstract class BaseMvpFragment<P extends IPresenter> extends BaseFragment
     super.initPresenter();
     mPresenter = onLoadPresenter();
     getPresenter().attachView(this);
-    //        if (getPresenter() != null) {
-    //            getPresenter().start();
-    //        }
   }
 
   protected abstract P onLoadPresenter();
