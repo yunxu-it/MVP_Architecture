@@ -25,25 +25,25 @@ android {
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
-  compile project(path: ':library')
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation project(path: ':library')
 
-  testCompile 'junit:junit:4.12'
-  testCompile "org.mockito:mockito-core:2.13.0"
-  androidTestCompile "org.mockito:mockito-android:2.13.0"
+  testImplementation 'junit:junit:4.12'
+  testImplementation "org.mockito:mockito-core:2.13.0"
+  androidTestImplementation "org.mockito:mockito-android:2.13.0"
 
-  compile rootProject.ext.dependencies["appcompat-v7"]
-  compile rootProject.ext.dependencies["design"]
-  compile rootProject.ext.dependencies["recyclerview-v7"]
+  implementation rootProject.ext.dependencies["appcompat-v7"]
+  implementation rootProject.ext.dependencies["design"]
+  implementation rootProject.ext.dependencies["recyclerview-v7"]
 
-  compile rootProject.ext.dependencies["glide"]
-  compile rootProject.ext.dependencies["gson"]
+  implementation rootProject.ext.dependencies["glide"]
+  implementation rootProject.ext.dependencies["gson"]
 
-  compile rootProject.ext.dependencies["rxjava2"]
-  compile rootProject.ext.dependencies["rxandroid2"]
-  compile rootProject.ext.dependencies["rxrelay2"]
+  implementation rootProject.ext.dependencies["rxjava2"]
+  implementation rootProject.ext.dependencies["rxandroid2"]
+  implementation rootProject.ext.dependencies["rxrelay2"]
 
-  compile rootProject.ext.dependencies["retrofit"]
-  compile rootProject.ext.dependencies["retrofit-adapter-rxjava2"]
-  compile rootProject.ext.dependencies["retrofit-converter-gson"]
+  implementation rootProject.ext.dependencies["retrofit"]
+  implementation rootProject.ext.dependencies["retrofit-adapter-rxjava2"]
+  implementation rootProject.ext.dependencies["retrofit-converter-gson"]
 }
