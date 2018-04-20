@@ -1,4 +1,4 @@
-package cn.winxo.library.rx;
+package cn.winxo.mvp.util;
 
 import com.jakewharton.rxrelay2.PublishRelay;
 import com.jakewharton.rxrelay2.Relay;
@@ -10,9 +10,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 
 /**
- * 基于
- *
- * @see Relay 的event bus
+ * 基于{@see Relay}的event bus
  */
 public class RxBus {
   private static volatile RxBus defaultInstance;

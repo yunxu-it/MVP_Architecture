@@ -1,9 +1,7 @@
-package cn.winxo.library.base;
+package cn.winxo.mvp.base;
 
-import android.text.TextUtils;
-import cn.winxo.library.base.ibase.IPresenter;
-import cn.winxo.library.base.ibase.IView;
-import cn.winxo.library.util.Toasts;
+import cn.winxo.mvp.base.ibase.IPresenter;
+import cn.winxo.mvp.base.ibase.IView;
 
 /**
  * Author: Winxo
@@ -24,12 +22,6 @@ public abstract class BaseMvpActivity<P extends IPresenter> extends BaseActivity
     super.initPresenter();
     mPresenter = onLoadPresenter();
     getPresenter().attachView(this);
-  }
-
-  @Override public void showError(Throwable throwable) {
-    if (throwable != null && !TextUtils.isEmpty(throwable.getMessage())) {
-      Toasts.showShort(throwable.getMessage());
-    }
   }
 
   @Override protected void onResume() {

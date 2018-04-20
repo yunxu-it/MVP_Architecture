@@ -1,17 +1,14 @@
-package cn.winxo.library.rx;
+package cn.winxo.mvp.util;
 
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * User: yunxu
- * Date: 2017/5/8
- * Time: 23:49
- * Email: yunxu.it@outlook.com
- * Desc:
+ * @author lxlong
+ * @date 21/04/2018
+ * @desc
  */
-
 public class RxUtils {
 
   public static <T> ObservableTransformer<T, T> rxSchedulerHelper() {    //compose简化线程

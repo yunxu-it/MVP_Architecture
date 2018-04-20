@@ -1,8 +1,8 @@
-package cn.winxo.library.base;
+package cn.winxo.mvp.base;
 
-import cn.winxo.library.base.ibase.IModel;
-import cn.winxo.library.base.ibase.IPresenter;
-import cn.winxo.library.base.ibase.IView;
+import cn.winxo.mvp.base.ibase.IModel;
+import cn.winxo.mvp.base.ibase.IPresenter;
+import cn.winxo.mvp.base.ibase.IView;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 

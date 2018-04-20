@@ -1,36 +1,17 @@
 package cn.winxo.mvp;
 
-import cn.winxo.library.LibApp;
-import cn.winxo.mvp.util.FakeCrashLibrary;
-import java.util.Locale;
-import timber.log.Timber;
+import android.app.Application;
+import cn.winxo.mvp.util.Toasts;
 
 /**
  * Author: Winxo
  * Date: 2018/2/9
  * Desc:
  */
-public class App extends LibApp {
+public class App extends Application {
 
   @Override public void onCreate() {
     super.onCreate();
-    initTimber();
-  }
-
-  private void initTimber() {
-    if (BuildConfig.DEBUG) {
-      Timber.plant(new Timber.DebugTree() {
-        @Override protected String createStackElementTag(StackTraceElement element) {
-          return String.format(Locale.CHINA, "%s:%s:%d", super.createStackElementTag(element),
-              element.getMethodName(), element.getLineNumber());
-        }
-      });
-    } else {
-      Timber.plant(new Timber.Tree() {
-        @Override protected void log(int priority, String tag, String message, Throwable t) {
-          FakeCrashLibrary.log(priority, tag, message);
-        }
-      });
-    }
+    Toasts.register(this);
   }
 }

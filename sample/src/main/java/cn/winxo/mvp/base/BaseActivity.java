@@ -1,10 +1,10 @@
-package cn.winxo.library.base;
+package cn.winxo.mvp.base;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import cn.winxo.library.rx.RxBus;
+import cn.winxo.mvp.util.RxBus;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 

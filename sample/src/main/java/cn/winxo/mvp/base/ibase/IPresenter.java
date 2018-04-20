@@ -1,4 +1,4 @@
-package cn.winxo.library.base.ibase;
+package cn.winxo.mvp.base.ibase;
 
 public interface IPresenter<T extends IView> {
 

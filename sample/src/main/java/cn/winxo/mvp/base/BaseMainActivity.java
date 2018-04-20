@@ -1,4 +1,4 @@
-package cn.winxo.library.base;
+package cn.winxo.mvp.base;
 
 import android.widget.Toast;
 

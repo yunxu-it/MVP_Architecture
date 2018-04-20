@@ -1,7 +1,7 @@
 package cn.winxo.mvp.module.main;
 
 import android.content.Context;
-import cn.winxo.library.base.BasePresenter;
+import cn.winxo.mvp.base.BasePresenter;
 
 /**
  * User: winxo

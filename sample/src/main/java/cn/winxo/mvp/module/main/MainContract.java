@@ -1,8 +1,8 @@
 package cn.winxo.mvp.module.main;
 
-import cn.winxo.library.base.ibase.IModel;
-import cn.winxo.library.base.ibase.IPresenter;
-import cn.winxo.library.base.ibase.IView;
+import cn.winxo.mvp.base.ibase.IModel;
+import cn.winxo.mvp.base.ibase.IPresenter;
+import cn.winxo.mvp.base.ibase.IView;
 
 /**
  * User: winxo

@@ -17,7 +17,7 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package cn.winxo.library.util;
+package cn.winxo.mvp.util;
 
 import android.content.Context;
 import android.widget.Toast;

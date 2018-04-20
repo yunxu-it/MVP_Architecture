@@ -1,11 +1,11 @@
 package cn.winxo.mvp.module.example;
 
 import android.content.Context;
-import cn.winxo.mvp.model.remote.ResultsModel;
-import cn.winxo.library.base.ibase.IModel;
-import cn.winxo.library.base.ibase.IPresenter;
-import cn.winxo.library.base.ibase.IView;
+import cn.winxo.mvp.base.ibase.IModel;
+import cn.winxo.mvp.base.ibase.IPresenter;
+import cn.winxo.mvp.base.ibase.IView;
 import cn.winxo.mvp.model.local.Example;
+import cn.winxo.mvp.model.remote.ResultsModel;
 import io.reactivex.Observable;
 import java.util.ArrayList;
 import java.util.List;

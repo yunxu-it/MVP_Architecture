@@ -1,4 +1,4 @@
-package cn.winxo.library.base;
+package cn.winxo.mvp.base;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import cn.winxo.library.rx.RxBus;
+import cn.winxo.mvp.util.RxBus;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 

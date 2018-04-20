@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion rootProject.ext.android.compileSdkVersion
-  buildToolsVersion rootProject.ext.android.buildToolsVersion
+  compileSdkVersion rootProject.ext.compileSdkVersion
 
   defaultConfig {
     applicationId "cn.winxo.mvp"
-    minSdkVersion rootProject.ext.android.minSdkVersion
-    targetSdkVersion rootProject.ext.android.targetSdkVersion
-    versionCode rootProject.ext.android.versionCode
-    versionName rootProject.ext.android.versionName
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode rootProject.ext.versionCode
+    versionName rootProject.ext.versionName
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
   buildTypes {
@@ -33,35 +32,25 @@ configurations.all {
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation project(path: ':library')
 
   testImplementation 'junit:junit:4.12'
-
 
   implementation "com.android.support:support-v4:${rootProject.ext.supportVersion}"
   implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
   implementation "com.android.support:design:${rootProject.ext.supportVersion}"
 
+  implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroidVersion}"
+  implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxjavaVersion}"
+  implementation "com.jakewharton.rxrelay2:rxrelay:${rootProject.ext.rxrelayVersion}"
 
-  implementation 'com.google.dagger:dagger:2.6'
-  annotationProcessor 'com.google.dagger:dagger-compiler:2.6'
+  implementation "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
 
-  implementation rootProject.ext.dependencies["glide"]
-  implementation rootProject.ext.dependencies["gson"]
-
-  implementation rootProject.ext.dependencies["rxjava2"]
-  implementation rootProject.ext.dependencies["rxandroid2"]
-  implementation rootProject.ext.dependencies["rxrelay2"]
-
-  implementation rootProject.ext.dependencies["timber"]
-  implementation 'com.squareup.picasso:picasso:2.5.2'
-
-  implementation rootProject.ext.dependencies["retrofit"]
-  implementation rootProject.ext.dependencies["retrofit-adapter-rxjava2"]
-  implementation rootProject.ext.dependencies["retrofit-converter-gson"]
+  implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
+  implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.adapterRxjava2Version}"
+  implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.converterGsonVersion}"
 
   // test-only
-  androidTestCompile "com.android.support:support-annotations:${rootProject.ext.supportVersion}"
+  androidTestImplementation "com.android.support:support-annotations:${rootProject.ext.supportVersion}"
   androidTestImplementation 'com.android.support.test:runner:1.0.1'
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
