@@ -1,7 +1,8 @@
-package cn.winxo.mvp.module.main;
+package cn.winxo.mvp.module.presenter;
 
 import android.content.Context;
 import cn.winxo.mvp.base.BasePresenter;
+import cn.winxo.mvp.module.conract.MainContract;
 
 /**
  * User: winxo
@@ -10,14 +11,13 @@ import cn.winxo.mvp.base.BasePresenter;
  * Email: yunxu.it@outlook.com
  * Desc:
  */
-public class MainPresenter extends BasePresenter<MainContract.View, MainContract.Model>
+public class MainPresenter extends BasePresenter<MainContract.View>
     implements MainContract.Presenter {
 
   private Context mContext;
 
   public MainPresenter(Context context) {
     mContext = context;
-    mModel = new MainModel();
   }
 
   @Override public void changeText(int visibility) {

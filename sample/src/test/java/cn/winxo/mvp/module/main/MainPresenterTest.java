@@ -1,5 +1,7 @@
 package cn.winxo.mvp.module.main;
 
+import cn.winxo.mvp.module.presenter.MainPresenter;
+import cn.winxo.mvp.module.view.MainActivity;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

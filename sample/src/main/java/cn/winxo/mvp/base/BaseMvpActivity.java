@@ -33,8 +33,6 @@ public abstract class BaseMvpActivity<P extends IPresenter> extends BaseActivity
     super.onDestroy();
     if (getPresenter() != null) {
       getPresenter().onUnSubscribe();
-    }
-    if (getPresenter() != null) {
       getPresenter().detachView();
     }
   }

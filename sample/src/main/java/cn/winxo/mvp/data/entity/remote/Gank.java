@@ -1,8 +1,8 @@
-package cn.winxo.mvp.model.remote;
+package cn.winxo.mvp.data.entity.remote;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ResultsModel {
+public class Gank {
   /**
    * _id : 589a7161421aa92db8a0041b
    * createdAt : 2017-02-08T09:16:17.678Z

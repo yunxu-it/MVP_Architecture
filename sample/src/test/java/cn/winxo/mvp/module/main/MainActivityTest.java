@@ -2,6 +2,7 @@ package cn.winxo.mvp.module.main;
 
 import cn.winxo.mvp.BuildConfig;
 import cn.winxo.mvp.R;
+import cn.winxo.mvp.module.view.MainActivity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;

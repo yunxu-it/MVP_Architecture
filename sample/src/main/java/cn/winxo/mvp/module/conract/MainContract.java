@@ -1,4 +1,4 @@
-package cn.winxo.mvp.module.main;
+package cn.winxo.mvp.module.conract;
 
 import cn.winxo.mvp.base.ibase.IModel;
 import cn.winxo.mvp.base.ibase.IPresenter;

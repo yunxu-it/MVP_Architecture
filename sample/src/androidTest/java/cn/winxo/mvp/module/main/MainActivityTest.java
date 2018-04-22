@@ -7,6 +7,7 @@ import android.support.test.runner.AndroidJUnit4;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import cn.winxo.mvp.R;
+import cn.winxo.mvp.module.view.MainActivity;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.Rule;

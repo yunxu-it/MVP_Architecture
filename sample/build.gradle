@@ -49,6 +49,11 @@ dependencies {
   implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.adapterRxjava2Version}"
   implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.converterGsonVersion}"
 
+  // Room (use 1.1.0-beta3 for latest beta)
+  implementation "android.arch.persistence.room:runtime:1.0.0"
+  annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+
+
   // test-only
   androidTestImplementation "com.android.support:support-annotations:${rootProject.ext.supportVersion}"
   androidTestImplementation 'com.android.support.test:runner:1.0.1'

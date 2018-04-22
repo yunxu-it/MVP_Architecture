@@ -1,4 +1,4 @@
-package cn.winxo.mvp.module.main;
+package cn.winxo.mvp.module.view;
 
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import cn.winxo.mvp.R;
 import cn.winxo.mvp.base.BaseMvpActivity;
+import cn.winxo.mvp.module.conract.MainContract;
+import cn.winxo.mvp.module.presenter.MainPresenter;
 
 public class MainActivity extends BaseMvpActivity<MainContract.Presenter>
     implements MainContract.View {

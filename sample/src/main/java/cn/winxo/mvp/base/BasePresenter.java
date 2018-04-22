@@ -1,15 +1,13 @@
 package cn.winxo.mvp.base;
 
-import cn.winxo.mvp.base.ibase.IModel;
 import cn.winxo.mvp.base.ibase.IPresenter;
 import cn.winxo.mvp.base.ibase.IView;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
-public abstract class BasePresenter<V extends IView, M extends IModel> implements IPresenter<V> {
+public abstract class BasePresenter<V extends IView> implements IPresenter<V> {
 
   protected V mView;
-  protected M mModel;
   private CompositeDisposable mDisposable;
 
   @Override public void attachView(V view) {
@@ -28,7 +26,7 @@ public abstract class BasePresenter<V extends IView, M extends IModel> implement
     }
   }
 
-  public void addSubscription(Disposable disposable) {
+  protected void addSubscription(Disposable disposable) {
     if (mDisposable == null) {
       mDisposable = new CompositeDisposable();
     }
@@ -41,9 +39,5 @@ public abstract class BasePresenter<V extends IView, M extends IModel> implement
 
   public V getView() {
     return mView;
-  }
-
-  public M getModel() {
-    return mModel;
   }
 }
