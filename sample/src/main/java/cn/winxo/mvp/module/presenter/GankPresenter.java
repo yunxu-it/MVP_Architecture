@@ -2,9 +2,9 @@ package cn.winxo.mvp.module.presenter;
 
 import android.content.Context;
 import cn.winxo.mvp.base.BasePresenter;
+import cn.winxo.mvp.data.Injection;
 import cn.winxo.mvp.data.entity.remote.Gank;
 import cn.winxo.mvp.data.source.GankRepository;
-import cn.winxo.mvp.data.source.remote.GankRemoteDataSource;
 import cn.winxo.mvp.module.conract.GankContact;
 import io.reactivex.functions.Consumer;
 import java.util.List;
@@ -21,7 +21,7 @@ public class GankPresenter extends BasePresenter<GankContact.View>
 
   public GankPresenter(Context context) {
     this.context = context;
-    mGankRepository = GankRepository.getInstance(GankRemoteDataSource.getInstance());
+    mGankRepository = Injection.provideGankRepository(context);
   }
 
   @Override public void getGanks(int page) {

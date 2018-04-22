@@ -5,11 +5,9 @@ import cn.winxo.mvp.base.BasePresenter;
 import cn.winxo.mvp.module.conract.MainContract;
 
 /**
- * User: winxo
- * Date: 2018/2/8
- * Time: 18:13
- * Email: yunxu.it@outlook.com
- * Desc:
+ * @author lxlong
+ * @date 22/04/2018
+ * @desc
  */
 public class MainPresenter extends BasePresenter<MainContract.View>
     implements MainContract.Presenter {

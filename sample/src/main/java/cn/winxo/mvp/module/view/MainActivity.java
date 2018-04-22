@@ -1,22 +1,19 @@
 package cn.winxo.mvp.module.view;
 
-import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Button;
 import cn.winxo.mvp.R;
 import cn.winxo.mvp.base.BaseMvpActivity;
-import cn.winxo.mvp.module.conract.MainContract;
+import cn.winxo.mvp.module.conract.MainContract.Presenter;
+import cn.winxo.mvp.module.conract.MainContract.View;
 import cn.winxo.mvp.module.presenter.MainPresenter;
 
-public class MainActivity extends BaseMvpActivity<MainContract.Presenter>
-    implements MainContract.View {
+public class MainActivity extends BaseMvpActivity<Presenter> implements View {
 
   protected Toolbar mToolbar;
-  protected AppBarLayout mAppbar;
-  protected Button mButton;
+  private BottomNavigationView mTabs;
 
-  @Override protected MainContract.Presenter onLoadPresenter() {
+  @Override protected Presenter onLoadPresenter() {
     return new MainPresenter(this);
   }
 
@@ -26,19 +23,15 @@ public class MainActivity extends BaseMvpActivity<MainContract.Presenter>
 
   @Override protected void initView() {
     mToolbar = findViewById(R.id.toolbar);
-    mAppbar = findViewById(R.id.appbar);
-    mButton = findViewById(R.id.button);
-    //mFrameContent = (FrameLayout) findViewById(R.id.frame_content);
-
     mToolbar.setTitle(R.string.app_name);
-    mButton.setOnClickListener(view -> {
-      mToolbar.setVisibility(
-          mToolbar.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
-      mPresenter.changeText(mToolbar.getVisibility());
+    mTabs = findViewById(R.id.tabs);
+    mTabs.setOnNavigationItemSelectedListener(item -> {
+      mToolbar.setTitle(item.getTitle().toString().toUpperCase());
+      return true;
     });
   }
 
   @Override public void changeButton(String text) {
-    mButton.setText(text);
+
   }
 }

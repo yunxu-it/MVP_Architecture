@@ -1,5 +1,10 @@
 package cn.winxo.mvp.base.ibase;
 
+/**
+ * @author lxlong
+ * @date 22/04/2018
+ * @desc
+ */
 public interface IPresenter<T extends IView> {
 
   void attachView(T view);

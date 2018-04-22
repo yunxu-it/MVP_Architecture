@@ -10,7 +10,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 
 /**
- * 基于{@see Relay}的event bus
+ * 基于{@link Relay}的event bus
  */
 public class RxBus {
   private static volatile RxBus defaultInstance;
@@ -18,7 +18,7 @@ public class RxBus {
   private Relay<Object> bus;
 
   // PublishSubject只会把在订阅发生的时间点之后来自原始Observable的数据发射给观察者
-  public RxBus() {
+  private RxBus() {
     bus = PublishRelay.create().toSerialized();
   }
 

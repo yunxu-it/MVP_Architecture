@@ -9,20 +9,4 @@ public class Apis {
   public static final String BaseUrl = "http://gank.io/api/";
 
   public static final int LIMIT_SIZE = 10;
-
-  ///**
-  // * 用来统一处理类似样的请求结果：
-  // * {"resultCode": 0,"resultMessage": "成功","data": {}}
-  // * 并将RetrofitResult中的Data分离出来交给subscriber处理
-  // */
-  //public class RetrofitResultFunc implements Func1<BaseModel, List<ResultsModel>> {
-  //
-  //    @Override
-  //    public List<ResultsModel> call(BaseModel baseModel) {
-  //        if (baseModel.isError()) {
-  //            // 暂时无用
-  //        }
-  //        return baseModel.getResults();
-  //    }
-  //}
 }

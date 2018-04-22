@@ -6,34 +6,34 @@ package cn.winxo.mvp.data.entity.local;
  * @desc
  */
 public class User {
-  private int id;
-  private String name;
-  private String desc;
+    private int id;
+    private String name;
+    private String desc;
 
-  public int getId() {
-    return id;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public User setId(int id) {
-    this.id = id;
-    return this;
-  }
+    public User setId(int id) {
+        this.id = id;
+        return this;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public User setName(String name) {
-    this.name = name;
-    return this;
-  }
+    public User setName(String name) {
+        this.name = name;
+        return this;
+    }
 
-  public String getDesc() {
-    return desc;
-  }
+    public String getDesc() {
+        return desc;
+    }
 
-  public User setDesc(String desc) {
-    this.desc = desc;
-    return this;
-  }
+    public User setDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
 }

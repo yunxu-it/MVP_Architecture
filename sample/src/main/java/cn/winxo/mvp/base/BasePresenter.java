@@ -32,12 +32,4 @@ public abstract class BasePresenter<V extends IView> implements IPresenter<V> {
     }
     mDisposable.add(disposable);
   }
-
-  public boolean isViewAttached() {
-    return mView != null;
-  }
-
-  public V getView() {
-    return mView;
-  }
 }

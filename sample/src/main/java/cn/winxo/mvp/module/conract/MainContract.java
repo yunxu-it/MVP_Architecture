@@ -1,6 +1,5 @@
 package cn.winxo.mvp.module.conract;
 
-import cn.winxo.mvp.base.ibase.IModel;
 import cn.winxo.mvp.base.ibase.IPresenter;
 import cn.winxo.mvp.base.ibase.IView;
 
@@ -15,10 +14,6 @@ public interface MainContract {
   interface View extends IView {
 
     void changeButton(String text);
-  }
-
-  interface Model extends IModel {
-
   }
 
   interface Presenter extends IPresenter<View> {
