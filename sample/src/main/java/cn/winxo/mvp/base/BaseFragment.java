@@ -1,6 +1,5 @@
 package cn.winxo.mvp.base;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,8 +18,7 @@ import io.reactivex.disposables.Disposable;
  */
 public abstract class BaseFragment extends Fragment {
 
-  private View mContentView;
-  private Context mContext;
+  protected View mContentView;
   private Disposable mDisposable;
 
   @Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,8 +27,6 @@ public abstract class BaseFragment extends Fragment {
       mContentView = inflater.inflate(setLayoutResourceID(), container, false);
     }
     initPresenter();
-
-    mContext = getContext();
     mDisposable = RxBus.getDefault()
         .toObservable(Object.class)
         .observeOn(AndroidSchedulers.mainThread())
@@ -52,9 +48,6 @@ public abstract class BaseFragment extends Fragment {
 
   }
 
-  /**
-   * initialize before  setUpView and  setUpData
-   */
   protected void init(Bundle savedInstanceState) {
   }
 
