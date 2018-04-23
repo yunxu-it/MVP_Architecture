@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import cn.winxo.toolbox.module.view.HomeFragment;
+import cn.winxo.toolbox.module.view.MineFragment;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,9 +18,8 @@ public class HomeTabAdapter extends FragmentStatePagerAdapter {
 
   public HomeTabAdapter(FragmentManager fm) {
     super(fm);
-    for (int i = 0; i < 2; i++) {
-      mFragments.add(HomeFragment.newInstance(i));
-    }
+    mFragments.add(HomeFragment.newInstance());
+    mFragments.add(MineFragment.newInstance());
   }
 
   @Override public Fragment getItem(int position) {

@@ -1,5 +1,7 @@
 package cn.winxo.toolbox.data.source;
 
+import android.support.annotation.NonNull;
+import cn.winxo.toolbox.data.entity.local.UserEntity;
 import cn.winxo.toolbox.data.source.interfaces.UserDataSource;
 
 /**
@@ -9,13 +11,15 @@ import cn.winxo.toolbox.data.source.interfaces.UserDataSource;
  */
 public class UserRepository implements UserDataSource {
   private static UserRepository INSTANCE = null;
+  private UserDataSource mLocalUserDataSource;
 
-  private UserRepository() {
+  private UserRepository(@NonNull UserDataSource localUserDataSource) {
+    mLocalUserDataSource = localUserDataSource;
   }
 
-  public static UserRepository getInstance() {
+  public static UserRepository getInstance(UserDataSource localUserDataSource) {
     if (INSTANCE == null) {
-      INSTANCE = new UserRepository();
+      INSTANCE = new UserRepository(localUserDataSource);
     }
     return INSTANCE;
   }
@@ -25,6 +29,9 @@ public class UserRepository implements UserDataSource {
   }
 
   @Override public void getUser() {
+  }
+
+  @Override public void insertUser(UserEntity userEntity) {
 
   }
 }

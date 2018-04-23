@@ -6,11 +6,11 @@ import cn.winxo.toolbox.base.BaseMvpFragment;
 import cn.winxo.toolbox.module.conract.HomeContract;
 import cn.winxo.toolbox.module.presenter.HomePresenter;
 
-public class HomeFragment extends BaseMvpFragment<HomeContract.Presenter>
+public class MineFragment extends BaseMvpFragment<HomeContract.Presenter>
     implements HomeContract.View {
 
-  public static HomeFragment newInstance() {
-    return new HomeFragment();
+  public static MineFragment newInstance() {
+    return new MineFragment();
   }
 
   @Override protected void init(Bundle savedInstanceState) {
@@ -18,7 +18,6 @@ public class HomeFragment extends BaseMvpFragment<HomeContract.Presenter>
   }
 
   @Override protected void initView() {
-
   }
 
   @Override protected void initData() {
@@ -30,7 +29,7 @@ public class HomeFragment extends BaseMvpFragment<HomeContract.Presenter>
   }
 
   @Override protected int setLayoutResourceID() {
-    return R.layout.fragment_index;
+    return R.layout.fragment_mine;
   }
 }
   
