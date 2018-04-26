@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">我的自传</string>
+  <string name="app_name">ToolBox</string>
   <string name="tab_home">首页</string>
   <string name="tab_mine">我</string>
 </resources>
