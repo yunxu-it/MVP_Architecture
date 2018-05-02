@@ -39,4 +39,5 @@ import android.arch.persistence.room.PrimaryKey;
   public void setPassword(String password) {
     this.password = password;
   }
+
 }

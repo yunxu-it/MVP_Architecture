@@ -2,6 +2,7 @@ package cn.winxo.toolbox.module.conract;
 
 import cn.winxo.toolbox.base.ibase.IPresenter;
 import cn.winxo.toolbox.base.ibase.IView;
+import cn.winxo.toolbox.data.entity.local.UserEntity;
 
 public interface HomeContract {
 
@@ -11,5 +12,8 @@ public interface HomeContract {
 
   interface Presenter extends IPresenter<View> {
 
+    void loadUser();
+
+    void insertUser(UserEntity userEntity);
   }
 }

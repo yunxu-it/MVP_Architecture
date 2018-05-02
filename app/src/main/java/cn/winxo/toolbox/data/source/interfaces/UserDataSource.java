@@ -1,6 +1,8 @@
 package cn.winxo.toolbox.data.source.interfaces;
 
 import cn.winxo.toolbox.data.entity.local.UserEntity;
+import io.reactivex.Flowable;
+import java.util.List;
 
 /**
  * @author lxlong
@@ -9,7 +11,7 @@ import cn.winxo.toolbox.data.entity.local.UserEntity;
  */
 public interface UserDataSource {
 
-  void getUser();
+  Flowable<List<UserEntity>> getUser();
 
   void insertUser(UserEntity userEntity);
 }
