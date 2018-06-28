@@ -32,6 +32,4 @@ public class RetrofitRequest {
   public GankService getGank() {
     return getService().create(GankService.class);
   }
-
-
 }
