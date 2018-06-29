@@ -52,19 +52,15 @@ public class RxBus {
     return toObservable(eventType).observeOn(scheduler).subscribe(onNext);
   }
 
-  public <T> Disposable register(Class<T> eventType, Scheduler scheduler, Consumer<T> onNext,
-      Consumer onError, Action onComplete, Consumer onSubscribe) {
-    return toObservable(eventType).observeOn(scheduler)
-        .subscribe(onNext, onError, onComplete, onSubscribe);
+  public <T> Disposable register(Class<T> eventType, Scheduler scheduler, Consumer<T> onNext, Consumer onError, Action onComplete, Consumer onSubscribe) {
+    return toObservable(eventType).observeOn(scheduler).subscribe(onNext, onError, onComplete, onSubscribe);
   }
 
-  public <T> Disposable register(Class<T> eventType, Scheduler scheduler, Consumer<T> onNext,
-      Consumer onError, Action onComplete) {
+  public <T> Disposable register(Class<T> eventType, Scheduler scheduler, Consumer<T> onNext, Consumer onError, Action onComplete) {
     return toObservable(eventType).observeOn(scheduler).subscribe(onNext, onError, onComplete);
   }
 
-  public <T> Disposable register(Class<T> eventType, Scheduler scheduler, Consumer<T> onNext,
-      Consumer onError) {
+  public <T> Disposable register(Class<T> eventType, Scheduler scheduler, Consumer<T> onNext, Consumer onError) {
     return toObservable(eventType).observeOn(scheduler).subscribe(onNext, onError);
   }
 
@@ -72,21 +68,16 @@ public class RxBus {
     return toObservable(eventType).observeOn(AndroidSchedulers.mainThread()).subscribe(onNext);
   }
 
-  public <T> Disposable register(Class<T> eventType, Consumer<T> onNext, Consumer onError,
-      Action onComplete, Consumer onSubscribe) {
-    return toObservable(eventType).observeOn(AndroidSchedulers.mainThread())
-        .subscribe(onNext, onError, onComplete, onSubscribe);
+  public <T> Disposable register(Class<T> eventType, Consumer<T> onNext, Consumer onError, Action onComplete, Consumer onSubscribe) {
+    return toObservable(eventType).observeOn(AndroidSchedulers.mainThread()).subscribe(onNext, onError, onComplete, onSubscribe);
   }
 
-  public <T> Disposable register(Class<T> eventType, Consumer<T> onNext, Consumer onError,
-      Action onComplete) {
-    return toObservable(eventType).observeOn(AndroidSchedulers.mainThread())
-        .subscribe(onNext, onError, onComplete);
+  public <T> Disposable register(Class<T> eventType, Consumer<T> onNext, Consumer onError, Action onComplete) {
+    return toObservable(eventType).observeOn(AndroidSchedulers.mainThread()).subscribe(onNext, onError, onComplete);
   }
 
   public <T> Disposable register(Class<T> eventType, Consumer<T> onNext, Consumer onError) {
-    return toObservable(eventType).observeOn(AndroidSchedulers.mainThread())
-        .subscribe(onNext, onError);
+    return toObservable(eventType).observeOn(AndroidSchedulers.mainThread()).subscribe(onNext, onError);
   }
 
   public void unregister(Disposable disposable) {

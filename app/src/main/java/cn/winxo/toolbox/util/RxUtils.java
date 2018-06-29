@@ -12,14 +12,10 @@ import io.reactivex.schedulers.Schedulers;
 public class RxUtils {
 
   public static <T> ObservableTransformer<T, T> rxSchedulerHelper() {    //compose简化线程
-    return observable -> observable.subscribeOn(Schedulers.io())
-        .unsubscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread());
+    return observable -> observable.subscribeOn(Schedulers.io()).unsubscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
   }
 
   public static <T> ObservableTransformer<T, T> rxIO2IOHelper() {    //compose简化线程
-    return observable -> observable.subscribeOn(Schedulers.io())
-        .unsubscribeOn(Schedulers.io())
-        .observeOn(Schedulers.io());
+    return observable -> observable.subscribeOn(Schedulers.io()).unsubscribeOn(Schedulers.io()).observeOn(Schedulers.io());
   }
 }

@@ -21,8 +21,7 @@ public abstract class BaseFragment extends Fragment {
   protected View mContentView;
   private Disposable mDisposable;
 
-  @Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
-      Bundle savedInstanceState) {
+  @Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     if (mContentView == null) {
       mContentView = inflater.inflate(setLayoutResourceID(), container, false);
     }
@@ -30,8 +29,7 @@ public abstract class BaseFragment extends Fragment {
     mDisposable = RxBus.getDefault()
         .toObservable(Object.class)
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(this::handleRxMsg,
-            throwable -> Log.wtf("RxBus Error: ", throwable.getMessage()));
+        .subscribe(this::handleRxMsg, throwable -> Log.wtf("RxBus Error: ", throwable.getMessage()));
     init(savedInstanceState);
     initView();
     initData();

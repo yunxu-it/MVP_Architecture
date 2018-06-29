@@ -1,3 +1,24 @@
-# WinxoMVP
+# Winxo Architecture
 
-通过项目的经验，逐渐形成的APP通用架构，还在补充当中
+#### 简介
+
+app通用项目结构
+
+#### 已有功能
+
+- [x] 网络请求
+- [x] 异步处理
+- [x] 数据库
+- [x] MVP
+- [x] 总线消息
+- [x] UI适配
+
+#### 依赖库
+
+- `rxandroid`
+- `rxjava`
+- `rxrelay`
+- `gson`
+- `retrofit`
+- `room`
+

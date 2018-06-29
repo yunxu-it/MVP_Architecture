@@ -3,40 +3,30 @@ package cn.winxo.toolbox.module.presenter;
 import android.content.Context;
 import android.util.Log;
 import cn.winxo.toolbox.base.BasePresenter;
-import cn.winxo.toolbox.data.entity.local.UserEntity;
-import cn.winxo.toolbox.data.source.UserRepository;
+import cn.winxo.toolbox.data.source.TaskRepository;
 import cn.winxo.toolbox.module.conract.HomeContract;
-import io.reactivex.BackpressureStrategy;
-import io.reactivex.Flowable;
-import io.reactivex.FlowableOnSubscribe;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
+import java.util.Date;
 
 public class HomePresenter extends BasePresenter<HomeContract.View> implements HomeContract.Presenter {
 
   private Context mContext;
-  private UserRepository mUserRepository;
+  private TaskRepository mTaskRepository;
 
-  public HomePresenter(Context context, UserRepository userRepository) {
+  public HomePresenter(Context context, TaskRepository taskRepository) {
     mContext = context;
-    mUserRepository = userRepository;
+    mTaskRepository = taskRepository;
   }
 
-  @Override public void loadUser() {
-    addSubscription(mUserRepository.getUser()
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(userEntities -> Log.e("HomePresenter", "accept: " + userEntities.size()), Throwable::printStackTrace));
+  @Override public void loadTask() {
+    Log.e("HomePresenter", "loadTask:+ 获取新数据 ");
+    addSubscription(mTaskRepository.listAllTask().subscribe(tasks -> mView.showData(tasks), throwable -> throwable.printStackTrace()));
   }
 
-  @Override public void insertUser(UserEntity userEntity) {
-    addSubscription(Flowable.create((FlowableOnSubscribe<Boolean>) e -> {
-      mUserRepository.insertUser(userEntity);
-      e.onNext(true);
-    }, BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(aBoolean -> {
-
-    }, throwable -> {
-
-    }));
+  @Override public void addTask(String content) {
+    Date date = new Date();
+    addSubscription(mTaskRepository.addTask(content, date).subscribe(task -> {
+      mView.addTask(task);
+    }, throwable -> throwable.printStackTrace()));
   }
 }
+

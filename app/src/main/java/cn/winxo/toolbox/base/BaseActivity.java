@@ -18,10 +18,8 @@ public abstract class BaseActivity extends AppCompatActivity {
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     init(savedInstanceState);
-    busDisposable = RxBus.getDefault()
-        .toObservable(Object.class)
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(this::handleRxMsg, Throwable::printStackTrace);
+    busDisposable =
+        RxBus.getDefault().toObservable(Object.class).observeOn(AndroidSchedulers.mainThread()).subscribe(this::handleRxMsg, Throwable::printStackTrace);
     setContentView(setLayoutResourceID());
     initLate(savedInstanceState);
     initPresenter();

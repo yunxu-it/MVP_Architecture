@@ -3,12 +3,9 @@ package cn.winxo.toolbox.module.view;
 import android.os.Bundle;
 import android.widget.TextView;
 import cn.winxo.toolbox.R;
-import cn.winxo.toolbox.base.BaseMvpFragment;
-import cn.winxo.toolbox.data.Injection;
-import cn.winxo.toolbox.module.conract.HomeContract;
-import cn.winxo.toolbox.module.presenter.HomePresenter;
+import cn.winxo.toolbox.base.BaseFragment;
 
-public class MineFragment extends BaseMvpFragment<HomeContract.Presenter> implements HomeContract.View {
+public class MineFragment extends BaseFragment {
 
   private TextView mText;
 
@@ -27,10 +24,6 @@ public class MineFragment extends BaseMvpFragment<HomeContract.Presenter> implem
 
   @Override protected void initData() {
 
-  }
-
-  @Override protected HomeContract.Presenter onLoadPresenter() {
-    return new HomePresenter(getActivity(), Injection.provideUserRepository(getActivity()));
   }
 
   @Override protected int setLayoutResourceID() {

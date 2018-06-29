@@ -9,6 +9,11 @@ android {
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode rootProject.ext.versionCode
     versionName rootProject.ext.versionName
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+      }
+    }
   }
   buildTypes {
     release {
@@ -49,4 +54,8 @@ dependencies {
   implementation "android.arch.persistence.room:runtime:${rootProject.ext.roomVersion}"
   annotationProcessor "android.arch.persistence.room:compiler:${rootProject.ext.roomVersion}"
   implementation "android.arch.persistence.room:rxjava2:${rootProject.ext.roomVersion}"
+
+  implementation 'me.drakeet.multitype:multitype-kotlin:3.4.4'
+
+  implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 }

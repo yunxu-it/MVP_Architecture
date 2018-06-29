@@ -1,17 +1,15 @@
 package cn.winxo.toolbox.data;
 
 import android.content.Context;
-import android.support.v4.util.Preconditions;
-import cn.winxo.toolbox.data.entity.local.AppDatabase;
-import cn.winxo.toolbox.data.entity.local.UserDao;
-import cn.winxo.toolbox.data.source.UserRepository;
+import cn.winxo.toolbox.data.dao.AppDatabase;
+import cn.winxo.toolbox.data.dao.TaskDao;
+import cn.winxo.toolbox.data.source.TaskRepository;
 import io.reactivex.annotations.NonNull;
 
 public class Injection {
 
-  public static UserRepository provideUserRepository(@NonNull Context context) {
-    Preconditions.checkNotNull(context);
-    UserDao userDao = AppDatabase.getInstance(context).userDao();
-    return UserRepository.getInstance(userDao);
+  public static TaskRepository provideTaskRepository(@NonNull Context context) {
+    TaskDao taskDao = AppDatabase.getInstance(context).taskDao();
+    return TaskRepository.getInstance(taskDao);
   }
 }

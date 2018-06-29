@@ -3,7 +3,6 @@ package cn.winxo.toolbox.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import cn.winxo.toolbox.module.view.HomeFragment;
 import cn.winxo.toolbox.module.view.MineFragment;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ public class HomeTabAdapter extends FragmentStatePagerAdapter {
 
   public HomeTabAdapter(FragmentManager fm) {
     super(fm);
-    mFragments.add(HomeFragment.newInstance());
+    mFragments.add(MineFragment.newInstance());
     mFragments.add(MineFragment.newInstance());
   }
 
