@@ -1,4 +1,4 @@
-package cn.winxo.toolbox;
+package cn.winxo.toolbox.widget;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

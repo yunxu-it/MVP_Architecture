@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
-import cn.winxo.toolbox.AdvancedRecyclerView;
+import cn.winxo.toolbox.widget.AdvancedRecyclerView;
 import cn.winxo.toolbox.R;
 import cn.winxo.toolbox.adapter.TaskViewBinder;
 import cn.winxo.toolbox.base.BaseMvpActivity;
