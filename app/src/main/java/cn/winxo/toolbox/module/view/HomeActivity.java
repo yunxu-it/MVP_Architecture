@@ -1,18 +1,18 @@
 package cn.winxo.toolbox.module.view;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
+import cn.winxo.toolbox.AdvancedRecyclerView;
 import cn.winxo.toolbox.R;
 import cn.winxo.toolbox.adapter.TaskViewBinder;
 import cn.winxo.toolbox.base.BaseMvpActivity;
 import cn.winxo.toolbox.data.Injection;
 import cn.winxo.toolbox.data.entity.local.Task;
+import cn.winxo.toolbox.interfaces.OnRecyclerTouchListener;
 import cn.winxo.toolbox.module.conract.HomeContract;
 import cn.winxo.toolbox.module.presenter.HomePresenter;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -61,8 +61,13 @@ public class HomeActivity extends BaseMvpActivity<HomeContract.Presenter> implem
 
     mSwipeRefresh = findViewById(R.id.swipe_refresh);
     mSwipeRefresh.setOnRefreshListener(this);
-    RecyclerView recyclerView = findViewById(R.id.recycler_view);
+    AdvancedRecyclerView recyclerView = findViewById(R.id.recycler_view);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    recyclerView.setOnRecyclerTouchListener(new OnRecyclerTouchListener() {
+      @Override public void onRightSlide() {
+        Log.e("HomeActivity", "onRightSlide: +右划");
+      }
+    });
     mAdapter = new MultiTypeAdapter();
     //mAdapter.setHasStableIds(true);
     mAdapter.register(Task.class, new TaskViewBinder());
