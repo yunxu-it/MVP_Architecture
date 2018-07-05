@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
+<cn.winxo.toolbox.widget.SwipeMenuLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:textColor="@color/md_grey_900"
-    android:textSize="@dimen/font_16"
-    tools:text="摄像头预览画面变形"/>
+    android:clickable="true"
+    android:focusable="true"
+    app:ios="false"
+    app:leftSwipe="true"
+    app:swipeEnable="true">
+
+  <TextView
+      android:id="@+id/content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:textColor="@color/md_grey_900"
+      android:textSize="@dimen/font_16"
+      tools:text="摄像头预览画面变形"/>
+
+  <ImageView
+      android:id="@+id/swipe_edit"
+      android:layout_width="36dp"
+      android:layout_height="wrap_content"
+      android:foregroundGravity="center"
+      android:src="@drawable/ic_edit"/>
+
+  <ImageView
+      android:id="@+id/swipe_delete"
+      android:layout_width="36dp"
+      android:layout_height="wrap_content"
+      android:foregroundGravity="center"
+      android:src="@drawable/ic_trash_can"/>
+
+</cn.winxo.toolbox.widget.SwipeMenuLayout>

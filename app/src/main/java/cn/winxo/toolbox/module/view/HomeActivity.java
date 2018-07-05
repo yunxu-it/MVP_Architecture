@@ -3,16 +3,15 @@ package cn.winxo.toolbox.module.view;
 import android.os.Build;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
-import cn.winxo.toolbox.widget.AdvancedRecyclerView;
 import cn.winxo.toolbox.R;
 import cn.winxo.toolbox.adapter.TaskViewBinder;
 import cn.winxo.toolbox.base.BaseMvpActivity;
 import cn.winxo.toolbox.data.Injection;
 import cn.winxo.toolbox.data.entity.local.Task;
-import cn.winxo.toolbox.interfaces.OnRecyclerTouchListener;
+import cn.winxo.toolbox.interfaces.OnSwipeListener;
 import cn.winxo.toolbox.module.conract.HomeContract;
 import cn.winxo.toolbox.module.presenter.HomePresenter;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -50,27 +49,22 @@ public class HomeActivity extends BaseMvpActivity<HomeContract.Presenter> implem
   }
 
   @Override protected void initView() {
-    //View decorView = getWindow().getDecorView();
-    //int option = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
-    //decorView.setSystemUiVisibility(option);
-    //getWindow().setStatusBarColor(Color.TRANSPARENT);
-    //ActionBar actionBar = getSupportActionBar();
-    //if (actionBar != null) {
-    //  actionBar.hide();
-    //}
-
     mSwipeRefresh = findViewById(R.id.swipe_refresh);
     mSwipeRefresh.setOnRefreshListener(this);
-    AdvancedRecyclerView recyclerView = findViewById(R.id.recycler_view);
+    RecyclerView recyclerView = findViewById(R.id.recycler_view);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    recyclerView.setOnRecyclerTouchListener(new OnRecyclerTouchListener() {
-      @Override public void onRightSlide() {
-        Log.e("HomeActivity", "onRightSlide: +右划");
+    mAdapter = new MultiTypeAdapter();
+    TaskViewBinder binder = new TaskViewBinder();
+    binder.setOnSwipeListener(new OnSwipeListener<Task>() {
+      @Override public void onDelete(int position, Task task) {
+
+      }
+
+      @Override public void onEdit(int position, Task task) {
+
       }
     });
-    mAdapter = new MultiTypeAdapter();
-    //mAdapter.setHasStableIds(true);
-    mAdapter.register(Task.class, new TaskViewBinder());
+    mAdapter.register(Task.class, binder);
     recyclerView.setAdapter(mAdapter);
   }
 
