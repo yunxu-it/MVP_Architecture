@@ -4,9 +4,12 @@ import android.support.annotation.NonNull;
 import cn.winxo.toolbox.data.dao.TaskDao;
 import cn.winxo.toolbox.data.entity.local.Task;
 import cn.winxo.toolbox.data.source.interfaces.TaskDataSource;
+import cn.winxo.toolbox.util.RxUtils;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableOnSubscribe;
+import io.reactivex.Observable;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import java.util.Date;
@@ -47,5 +50,12 @@ public class TaskRepository implements TaskDataSource {
         e.onNext(tasks.get(0));
       }
     }, BackpressureStrategy.DROP).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+  }
+
+  @Override public Observable<Boolean> removeTask(long id) {
+    return Observable.create((ObservableOnSubscribe<Boolean>) e -> {
+      mTaskDao.deleteTaskByID(id);
+      e.onNext(true);
+    }).compose(RxUtils.rxSchedulerHelper());
   }
 }

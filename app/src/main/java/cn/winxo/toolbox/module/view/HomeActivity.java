@@ -57,7 +57,7 @@ public class HomeActivity extends BaseMvpActivity<HomeContract.Presenter> implem
     TaskViewBinder binder = new TaskViewBinder();
     binder.setOnSwipeListener(new OnSwipeListener<Task>() {
       @Override public void onDelete(int position, Task task) {
-
+        mPresenter.removeTask(position, task);
       }
 
       @Override public void onEdit(int position, Task task) {
@@ -80,6 +80,12 @@ public class HomeActivity extends BaseMvpActivity<HomeContract.Presenter> implem
   @Override public void addTask(Task task) {
     ((List<Task>) mAdapter.getItems()).add(0, task);
     mAdapter.notifyItemInserted(0);
+  }
+
+  @Override public void removeTask(int position) {
+    List<Task> items = (List<Task>) mAdapter.getItems();
+    items.remove(position);
+    mAdapter.notifyItemRangeRemoved(position, items.size());
   }
 
   @Override public void onRefresh() {

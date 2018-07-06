@@ -12,6 +12,8 @@ public interface HomeContract {
     void showData(List<Task> tasks);
 
     void addTask(Task task);
+
+    void removeTask(int position);
   }
 
   interface Presenter extends IPresenter<View> {
@@ -19,5 +21,7 @@ public interface HomeContract {
     void loadTask();
 
     void addTask(String content);
+
+    void removeTask(int position, Task task);
   }
 }

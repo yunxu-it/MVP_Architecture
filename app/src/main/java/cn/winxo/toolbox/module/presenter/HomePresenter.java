@@ -3,6 +3,7 @@ package cn.winxo.toolbox.module.presenter;
 import android.content.Context;
 import android.util.Log;
 import cn.winxo.toolbox.base.BasePresenter;
+import cn.winxo.toolbox.data.entity.local.Task;
 import cn.winxo.toolbox.data.source.TaskRepository;
 import cn.winxo.toolbox.module.conract.HomeContract;
 import java.util.Date;
@@ -27,6 +28,10 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
     addSubscription(mTaskRepository.addTask(content, date).subscribe(task -> {
       mView.addTask(task);
     }, throwable -> throwable.printStackTrace()));
+  }
+
+  @Override public void removeTask(int position, Task task) {
+    addSubscription(mTaskRepository.removeTask(task.getId()).subscribe(aBoolean -> mView.removeTask(position), throwable -> throwable.printStackTrace()));
   }
 }
 
