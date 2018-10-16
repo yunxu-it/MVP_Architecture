@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import cn.winxo.toolbox.base.BasePresenter;
 import cn.winxo.toolbox.data.source.TaskRepository;
-import cn.winxo.toolbox.module.conract.HomeContract;
+import cn.winxo.toolbox.module.contract.HomeContract;
 import java.util.Date;
 
 public class HomePresenter extends BasePresenter<HomeContract.View> implements HomeContract.Presenter {

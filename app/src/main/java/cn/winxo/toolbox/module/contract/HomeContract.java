@@ -1,4 +1,4 @@
-package cn.winxo.toolbox.module.conract;
+package cn.winxo.toolbox.module.contract;
 
 import cn.winxo.toolbox.base.ibase.IPresenter;
 import cn.winxo.toolbox.base.ibase.IView;
