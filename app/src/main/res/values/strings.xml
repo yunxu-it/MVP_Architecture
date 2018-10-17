@@ -2,4 +2,7 @@
   <string name="app_name">ToolBox</string>
   <string name="tab_home">首页</string>
   <string name="tab_mine">我</string>
+
+  <string name="hint_add_task">添加任务</string>
+  <string name="hint_empty">你还未添加任何任务</string>
 </resources>

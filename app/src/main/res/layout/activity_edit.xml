@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/page_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_grey_50"
+    android:orientation="vertical">
+
+  <android.support.v7.widget.AppCompatEditText
+      android:id="@+id/add_task_input"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:focusedByDefault="true"
+      android:hint="@string/hint_add_task"
+      android:singleLine="true"
+      android:textColor="@color/md_grey_600"
+      android:textSize="@dimen/font_16"
+      tools:text="开会后视镜计算机"/>
+
+
+</LinearLayout>
