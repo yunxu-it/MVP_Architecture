@@ -1,6 +1,7 @@
 package cn.winxo.toolbox.module.view;
 
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,6 +18,7 @@ import cn.winxo.toolbox.module.presenter.HomePresenter;
 import com.afollestad.materialdialogs.MaterialDialog;
 import java.util.List;
 import me.drakeet.multitype.MultiTypeAdapter;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author lxlong
@@ -28,7 +30,7 @@ public class HomeActivity extends BaseMvpActivity<HomeContract.Presenter> implem
   private SwipeRefreshLayout mSwipeRefresh;
 
   @Override protected HomeContract.Presenter onLoadPresenter() {
-    return new HomePresenter(this, Injection.provideTaskRepository(this));
+    return new HomePresenter(this, Injection.INSTANCE.provideTaskRepository(this));
   }
 
   @Override protected int setLayoutResourceID() {
@@ -72,12 +74,7 @@ public class HomeActivity extends BaseMvpActivity<HomeContract.Presenter> implem
     mPresenter.loadTask();
   }
 
-  @Override public void showData(List<Task> tasks) {
-    mAdapter.setItems(tasks);
-    mAdapter.notifyDataSetChanged();
-  }
-
-  @Override public void addTask(Task task) {
+  @Override public void addTask(@NonNull Task task) {
     ((List<Task>) mAdapter.getItems()).add(0, task);
     mAdapter.notifyItemInserted(0);
   }
@@ -93,5 +90,10 @@ public class HomeActivity extends BaseMvpActivity<HomeContract.Presenter> implem
     new MaterialDialog.Builder(this).inputType(InputType.TYPE_CLASS_TEXT).input("我想...", "", (dialog, input) -> {
       mPresenter.addTask(input.toString());
     }).show();
+  }
+
+  @Override public void showData(@NotNull List<Task> tasks) {
+    mAdapter.setItems(tasks);
+    mAdapter.notifyDataSetChanged();
   }
 }

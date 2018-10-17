@@ -23,7 +23,7 @@ public class RetrofitRequest {
   }
 
   private Retrofit getService() {
-    return new Retrofit.Builder().baseUrl(Apis.BaseUrl)
+    return new Retrofit.Builder().baseUrl(Apis.Companion.getBaseUrl())
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build();

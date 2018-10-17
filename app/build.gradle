@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'io.fabric'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
@@ -54,13 +56,14 @@ dependencies {
 
   // Room (use 1.1.0-beta3 for latest beta)
   implementation "android.arch.persistence.room:runtime:${rootProject.ext.roomVersion}"
-  annotationProcessor "android.arch.persistence.room:compiler:${rootProject.ext.roomVersion}"
+  kapt "android.arch.persistence.room:compiler:${rootProject.ext.roomVersion}"
   implementation "android.arch.persistence.room:rxjava2:${rootProject.ext.roomVersion}"
 
   implementation 'me.drakeet.multitype:multitype-kotlin:3.4.4'
 
   implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
   // Check for v11.4.2 or higher
-  implementation 'com.google.firebase:firebase-core:16.0.3'
+  implementation 'com.google.firebase:firebase-core:16.0.4'
   implementation 'com.crashlytics.sdk.android:crashlytics:2.9.5'
+  implementation 'com.google.firebase:firebase-firestore:17.1.1'
 }
