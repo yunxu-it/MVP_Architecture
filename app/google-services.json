@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "372126350901",
+    "firebase_url": "https://todos-34fd2.firebaseio.com",
+    "project_id": "todos-34fd2",
+    "storage_bucket": "todos-34fd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372126350901:android:291d7103c04843b4",
+        "android_client_info": {
+          "package_name": "cn.winxo.toolbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372126350901-41a9rap3lmn4thl30gqi3elc69gt6iab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO51HGA7z5CMrngSXhGSH4HwF-p4pnVj4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

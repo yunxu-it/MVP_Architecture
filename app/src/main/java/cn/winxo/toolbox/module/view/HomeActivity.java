@@ -12,7 +12,7 @@ import cn.winxo.toolbox.base.BaseMvpActivity;
 import cn.winxo.toolbox.data.Injection;
 import cn.winxo.toolbox.data.entity.local.Task;
 import cn.winxo.toolbox.interfaces.OnSwipeListener;
-import cn.winxo.toolbox.module.conract.HomeContract;
+import cn.winxo.toolbox.module.contract.HomeContract;
 import cn.winxo.toolbox.module.presenter.HomePresenter;
 import com.afollestad.materialdialogs.MaterialDialog;
 import java.util.List;
