@@ -71,13 +71,11 @@ class HomeActivity : BaseMvpActivity<HomeContract.Presenter>(), HomeContract.Vie
     }
 
     override fun initData() {
-        mPresenter.loadTask()
         val instance = Calendar.getInstance()
         date_day.text = instance.get(Calendar.DAY_OF_MONTH).toString()
         date_year.text = instance.get(Calendar.YEAR).toString()
         date_time.text = DateUtils.getTimeFormat(instance.get(Calendar.HOUR_OF_DAY), instance.get(Calendar.MINUTE))
         date_month.text = DateUtils.getChineseMonth(instance.get(Calendar.MONTH) + 1)
-
     }
 
     override fun onResume() {

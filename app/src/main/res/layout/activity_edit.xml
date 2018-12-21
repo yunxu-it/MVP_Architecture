@@ -1,23 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/page_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_grey_50"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="24dp">
 
-  <EditText
-      android:id="@+id/add_task_input"
+
+  <FrameLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:focusedByDefault="true"
-      android:hint="@string/hint_add_task"
-      android:singleLine="true"
-      android:textColor="@color/md_grey_600"
-      android:textSize="@dimen/font_16"
-      tools:text="开会后视镜计算机"/>
+      android:layout_height="wrap_content">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:paddingBottom="4dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:text="@string/add_task"
+        android:textColor="@color/md_white_1000"
+        android:textSize="@dimen/font_16"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/md_white_1000">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:padding="24dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/want_hint"
+            android:singleLine="true"/>
+      </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+  </FrameLayout>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
 </LinearLayout>

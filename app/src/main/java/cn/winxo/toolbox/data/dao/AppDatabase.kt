@@ -6,13 +6,16 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import cn.winxo.toolbox.data.entity.local.Task
+import cn.winxo.toolbox.data.entity.local.Type
 import cn.winxo.toolbox.util.Converters
 
-@Database(entities = [Task::class], version = 1)
+@Database(entities = [Task::class, Type::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun taskDao(): TaskDao
+
+    abstract fun typeDao(): TypeDao
 
     companion object {
         @Volatile

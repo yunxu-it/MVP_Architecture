@@ -5,4 +5,6 @@
 
   <string name="hint_add_task">添加任务</string>
   <string name="hint_empty">你还未添加任何任务</string>
+  <string name="add_task">添加待办</string>
+  <string name="want_hint">我想...</string>
 </resources>

@@ -7,12 +7,12 @@ import android.view.ViewAnimationUtils
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.inputmethod.InputMethodManager
 import cn.winxo.toolbox.R
-import cn.winxo.toolbox.util.base.BaseMvpActivity
 import cn.winxo.toolbox.data.Injection
 import cn.winxo.toolbox.data.entity.Constant
 import cn.winxo.toolbox.data.entity.local.Task
 import cn.winxo.toolbox.module.contract.EditContract
 import cn.winxo.toolbox.module.presenter.EditPresenter
+import cn.winxo.toolbox.util.base.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_edit.add_task_input
 import kotlinx.android.synthetic.main.activity_edit.page_content
 import java.util.Timer
