@@ -1,10 +1,10 @@
 package cn.winxo.toolbox.data.dao
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
 import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import cn.winxo.toolbox.data.entity.local.Task
 import cn.winxo.toolbox.util.Converters
 
@@ -16,18 +16,14 @@ abstract class AppDatabase : RoomDatabase() {
 
     companion object {
         @Volatile
-        private var instance: AppDatabase? = null
+        private var INSTANCE: AppDatabase? = null
         private const val name = "winxo.db"
+        private val lock = Any()
 
-        fun getInstance(context: Context): AppDatabase? {
-            if (instance == null) {
-                synchronized(AppDatabase::class) {
-                    if (instance == null) {
-                        instance = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, name).build()
-                    }
-                }
-            }
-            return instance
+        fun getInstance(context: Context): AppDatabase = INSTANCE ?: synchronized(this) {
+            INSTANCE ?: Room.databaseBuilder(context.applicationContext,
+                    AppDatabase::class.java, name)
+                    .build().also { INSTANCE = it }
         }
     }
 }

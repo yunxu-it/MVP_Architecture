@@ -1,18 +1,14 @@
-ext {
-  compileSdkVersion = 27
-  minSdkVersion = 21
-  targetSdkVersion = 22
-  versionCode = 1
-  versionName = "1.0.0"
+ext.versions = [compileSdk    : 28,
+                minSdk        : 21,
+                targetSdk     : 24,
+                versionCode   : 1,
+                versionName   : "1.0.0",
 
-  supportVersion = "27.1.1"
-  gsonVersion = "2.7"
-  rxjavaVersion = "2.1.0"
-  rxAndroidVersion = "2.0.1"
-  rxrelayVersion = "2.0.0"
-  retrofitVersion = "2.1.0"
-  adapterRxjava2Version = "2.2.0"
-  converterGsonVersion = "2.1.0"
-  roomVersion = "1.1.1"
-}
+                rxJava        : "2.2.3",
+                rxAndroid     : "2.1.0",
+
+                retrofit      : "2.1.0",
+                adapterRxjava2: "2.2.0",
+                converterGson : "2.1.0",
+                room          : "2.0.0-rc01"]
 

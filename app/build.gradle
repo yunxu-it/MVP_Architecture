@@ -4,16 +4,18 @@ apply plugin: 'io.fabric'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply from: "../config.gradle"
+
 
 android {
-  compileSdkVersion rootProject.ext.compileSdkVersion
+  compileSdkVersion versions.compileSdk
 
   defaultConfig {
     applicationId "cn.winxo.toolbox"
-    minSdkVersion rootProject.ext.minSdkVersion
-    targetSdkVersion rootProject.ext.targetSdkVersion
-    versionCode rootProject.ext.versionCode
-    versionName rootProject.ext.versionName
+    minSdkVersion versions.minSdk
+    targetSdkVersion versions.targetSdk
+    versionCode versions.versionCode
+    versionName versions.versionName
     javaCompileOptions {
       annotationProcessorOptions {
         arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
@@ -33,38 +35,28 @@ android {
   }
 }
 
-configurations.all {
-  resolutionStrategy {
-    force 'com.android.support:support-annotations:23.1.1'
-  }
-}
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation "com.android.support:support-v4:${rootProject.ext.supportVersion}"
-  implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
-  implementation "com.android.support:design:${rootProject.ext.supportVersion}"
 
-  implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroidVersion}"
-  implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxjavaVersion}"
-  implementation "com.jakewharton.rxrelay2:rxrelay:${rootProject.ext.rxrelayVersion}"
+  implementation 'androidx.appcompat:appcompat:1.0.2'
+  implementation 'com.google.android.material:material:1.1.0-alpha02'
 
-  implementation "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
+  implementation "io.reactivex.rxjava2:rxandroid:" + versions.rxAndroid
+  implementation "io.reactivex.rxjava2:rxjava:" + versions.rxJava
 
-  implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
-  implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.adapterRxjava2Version}"
-  implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.converterGsonVersion}"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.ext.kotlin_version"
+
 
   // Room (use 1.1.0-beta3 for latest beta)
-  implementation "android.arch.persistence.room:runtime:${rootProject.ext.roomVersion}"
-  kapt "android.arch.persistence.room:compiler:${rootProject.ext.roomVersion}"
-  implementation "android.arch.persistence.room:rxjava2:${rootProject.ext.roomVersion}"
+  implementation "androidx.room:room-runtime:" + versions.room
+  kapt "androidx.room:room-compiler:" + versions.room
+  implementation "androidx.room:room-rxjava2:" + versions.room
 
-  implementation 'me.drakeet.multitype:multitype-kotlin:3.4.4'
+  implementation 'me.drakeet.multitype:multitype:3.5.0'
+  implementation 'me.drakeet.multitype:multitype-ktx:3.5.0'
 
-  implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
   // Check for v11.4.2 or higher
-  implementation 'com.google.firebase:firebase-core:16.0.4'
-  implementation 'com.crashlytics.sdk.android:crashlytics:2.9.5'
-  implementation 'com.google.firebase:firebase-firestore:17.1.1'
+  //  implementation 'com.google.firebase:firebase-core:16.0.6'
+  //  implementation 'com.crashlytics.sdk.android:crashlytics:2.9.7'
 }

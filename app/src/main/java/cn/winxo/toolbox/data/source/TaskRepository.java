@@ -1,6 +1,6 @@
 package cn.winxo.toolbox.data.source;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import cn.winxo.toolbox.data.dao.TaskDao;
 import cn.winxo.toolbox.data.entity.local.Task;
 import cn.winxo.toolbox.data.source.interfaces.TaskDataSource;
