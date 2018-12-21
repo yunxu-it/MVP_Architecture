@@ -1,4 +1,4 @@
-package cn.winxo.toolbox.base;
+package cn.winxo.toolbox.util.base;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;

@@ -1,4 +1,4 @@
-package cn.winxo.toolbox.interfaces;
+package cn.winxo.toolbox.util.interfaces;
 
 /**
  * @author lxlong

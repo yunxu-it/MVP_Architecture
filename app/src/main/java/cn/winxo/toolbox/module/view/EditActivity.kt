@@ -7,7 +7,7 @@ import android.view.ViewAnimationUtils
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.inputmethod.InputMethodManager
 import cn.winxo.toolbox.R
-import cn.winxo.toolbox.base.BaseMvpActivity
+import cn.winxo.toolbox.util.base.BaseMvpActivity
 import cn.winxo.toolbox.data.Injection
 import cn.winxo.toolbox.data.entity.Constant
 import cn.winxo.toolbox.data.entity.local.Task

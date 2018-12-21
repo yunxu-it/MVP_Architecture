@@ -1,7 +1,7 @@
-package cn.winxo.toolbox.base;
+package cn.winxo.toolbox.util.base;
 
-import cn.winxo.toolbox.base.ibase.IPresenter;
-import cn.winxo.toolbox.base.ibase.IView;
+import cn.winxo.toolbox.util.base.ibase.IPresenter;
+import cn.winxo.toolbox.util.base.ibase.IView;
 
 /**
  * Author: Winxo

@@ -1,4 +1,4 @@
-package cn.winxo.toolbox.adapter;
+package cn.winxo.toolbox.module.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import cn.winxo.toolbox.R;
 import cn.winxo.toolbox.data.entity.local.Task;
-import cn.winxo.toolbox.interfaces.OnSwipeListener;
+import cn.winxo.toolbox.util.interfaces.OnSwipeListener;
 import me.drakeet.multitype.ItemViewBinder;
 
 /**

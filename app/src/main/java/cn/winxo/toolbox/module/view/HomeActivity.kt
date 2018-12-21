@@ -5,12 +5,12 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import cn.winxo.toolbox.R
-import cn.winxo.toolbox.adapter.TaskViewBinder
-import cn.winxo.toolbox.base.BaseMvpActivity
+import cn.winxo.toolbox.module.adapter.TaskViewBinder
+import cn.winxo.toolbox.util.base.BaseMvpActivity
 import cn.winxo.toolbox.data.Injection
 import cn.winxo.toolbox.data.entity.Constant
 import cn.winxo.toolbox.data.entity.local.Task
-import cn.winxo.toolbox.interfaces.OnSwipeListener
+import cn.winxo.toolbox.util.interfaces.OnSwipeListener
 import cn.winxo.toolbox.module.contract.HomeContract
 import cn.winxo.toolbox.module.presenter.HomePresenter
 import kotlinx.android.synthetic.main.activity_home.recycler_view

@@ -1,4 +1,4 @@
-package cn.winxo.toolbox.widget;
+package cn.winxo.toolbox.module.widget;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

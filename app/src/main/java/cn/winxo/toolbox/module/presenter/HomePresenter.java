@@ -2,7 +2,7 @@ package cn.winxo.toolbox.module.presenter;
 
 import android.content.Context;
 import android.util.Log;
-import cn.winxo.toolbox.base.BasePresenter;
+import cn.winxo.toolbox.util.base.BasePresenter;
 import cn.winxo.toolbox.data.entity.local.Task;
 import cn.winxo.toolbox.data.source.TaskRepository;
 import cn.winxo.toolbox.module.contract.HomeContract;

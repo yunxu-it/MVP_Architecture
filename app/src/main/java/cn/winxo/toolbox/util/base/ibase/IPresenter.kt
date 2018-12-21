@@ -1,4 +1,4 @@
-package cn.winxo.toolbox.base.ibase
+package cn.winxo.toolbox.util.base.ibase
 
 /**
  * @author lxlong
