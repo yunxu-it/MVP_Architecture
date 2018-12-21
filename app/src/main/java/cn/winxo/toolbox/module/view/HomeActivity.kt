@@ -5,17 +5,23 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import cn.winxo.toolbox.R
-import cn.winxo.toolbox.module.adapter.TaskViewBinder
-import cn.winxo.toolbox.util.base.BaseMvpActivity
 import cn.winxo.toolbox.data.Injection
 import cn.winxo.toolbox.data.entity.Constant
 import cn.winxo.toolbox.data.entity.local.Task
-import cn.winxo.toolbox.util.interfaces.OnSwipeListener
+import cn.winxo.toolbox.module.adapter.TaskViewBinder
 import cn.winxo.toolbox.module.contract.HomeContract
 import cn.winxo.toolbox.module.presenter.HomePresenter
+import cn.winxo.toolbox.util.DateUtils
+import cn.winxo.toolbox.util.base.BaseMvpActivity
+import cn.winxo.toolbox.util.interfaces.OnSwipeListener
+import kotlinx.android.synthetic.main.activity_home.date_day
+import kotlinx.android.synthetic.main.activity_home.date_month
+import kotlinx.android.synthetic.main.activity_home.date_time
+import kotlinx.android.synthetic.main.activity_home.date_year
 import kotlinx.android.synthetic.main.activity_home.recycler_view
 import kotlinx.android.synthetic.main.activity_home.swipe_refresh
 import me.drakeet.multitype.MultiTypeAdapter
+import java.util.Calendar
 
 /**
  * @author lxlong
@@ -66,6 +72,12 @@ class HomeActivity : BaseMvpActivity<HomeContract.Presenter>(), HomeContract.Vie
 
     override fun initData() {
         mPresenter.loadTask()
+        val instance = Calendar.getInstance()
+        date_day.text = instance.get(Calendar.DAY_OF_MONTH).toString()
+        date_year.text = instance.get(Calendar.YEAR).toString()
+        date_time.text = DateUtils.getTimeFormat(instance.get(Calendar.HOUR_OF_DAY), instance.get(Calendar.MINUTE))
+        date_month.text = DateUtils.getChineseMonth(instance.get(Calendar.MONTH) + 1)
+
     }
 
     override fun onResume() {
@@ -80,7 +92,7 @@ class HomeActivity : BaseMvpActivity<HomeContract.Presenter>(), HomeContract.Vie
     }
 
     override fun removeTask(position: Int) {
-        val items = mAdapter.items as MutableList<Task>
+        val items = mAdapter.items
         items.removeAt(position)
         mAdapter.notifyItemRangeRemoved(position, items.size)
     }

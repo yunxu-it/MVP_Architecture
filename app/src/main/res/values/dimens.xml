@@ -1,24 +1,12 @@
 <resources>
-  // caption
-  // 24
-  <dimen name="font_12">12sp</dimen>
-  // body2
-  // 26
-  <dimen name="font_13">13sp</dimen>
-  // button body1
-  // 28
-  <dimen name="font_14">14sp</dimen>
-  // subheading
-  // 32
-  <dimen name="font_16">16sp</dimen>
-  // 36
-  <dimen name="font_18">18sp</dimen>
-  // title
-  // 40
-  <dimen name="font_20">20sp</dimen>
-  // 46
-  <dimen name="font_22">22sp</dimen>
-  //headLine
-  // 50
-  <dimen name="font_24">24sp</dimen>
+  <dimen name="font_10">10sp</dimen>  <!--over line-->
+  <dimen name="font_12">12sp</dimen>  <!--caption-->
+  <dimen name="font_14">14sp</dimen>  <!--button,body2,subtitle2-->
+  <dimen name="font_16">16sp</dimen>  <!--body1,subtitle1-->
+  <dimen name="font_20">20sp</dimen>  <!--h6-->
+  <dimen name="font_24">24sp</dimen>  <!--h5-->
+  <dimen name="font_34">34sp</dimen>  <!--h4-->
+  <dimen name="font_48">48sp</dimen>  <!--h3-->
+  <dimen name="font_60">60sp</dimen>  <!--h2-->
+  <dimen name="font_96">96sp</dimen>  <!--h1-->
 </resources>
