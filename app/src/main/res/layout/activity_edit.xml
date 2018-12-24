@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/page_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_grey_50"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="24dp">
 
@@ -14,21 +16,14 @@
       android:layout_height="wrap_content">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_bg"
-        android:paddingBottom="4dp"
-        android:paddingEnd="8dp"
-        android:paddingStart="8dp"
-        android:paddingTop="4dp"
-        android:text="@string/add_task"
-        android:textColor="@color/md_white_1000"
-        android:textSize="@dimen/font_16"/>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/md_white_1000">
+        android:minHeight="150dp"
+        app:cardBackgroundColor="@color/md_white_1000"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
 
       <LinearLayout
           android:layout_width="match_parent"
@@ -41,12 +36,34 @@
             android:layout_height="wrap_content"
             android:hint="@string/want_hint"
             android:singleLine="true"/>
+
       </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:id="@+id/edit_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/button_bg"
+        android:elevation="4dp"
+        android:paddingBottom="4dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:text="@string/add_task"
+        android:textColor="@color/md_white_1000"
+        android:textSize="@dimen/font_16"/>
+
   </FrameLayout>
 
-  <TextView
+
+  <ImageView
+      android:id="@+id/submit_button"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:background="@color/md_blue_300"
+      android:padding="4dp"
+      android:src="@drawable/ic_check_black_24dp"/>
+
 </LinearLayout>
