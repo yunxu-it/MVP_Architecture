@@ -97,7 +97,6 @@ class HomeActivity : BaseMvpActivity<HomeContract.Presenter>(), HomeContract.Vie
 
     override fun onRefresh() {
         swipe_refresh.isRefreshing = false
-        val intent = Intent()
         intent.setClass(this, EditActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         intent.putExtra(Constant.ExtraKey.START_X, 0)
